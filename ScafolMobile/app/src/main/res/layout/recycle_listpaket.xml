@@ -4,8 +4,6 @@
     android:id="@+id/activity_paketlist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
-    android:background="?android:attr/selectableItemBackground"
     tools:context="com.example.scafolmobile.activity.ActivityMain">
 
     <LinearLayout
@@ -29,7 +27,6 @@
         android:id="@+id/recycle_listpaket"
         android:clipToPadding="true"
         android:scrollbarStyle="outsideOverlay"
-        android:padding="5dp"
         android:layout_below="@id/layout_total"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

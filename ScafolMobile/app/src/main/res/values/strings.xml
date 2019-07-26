@@ -10,4 +10,7 @@
     <string name="title_paket">Paket</string>
     <string name="title_detail_paket">Detail Paket</string>
 
+    <string name="tab_text_1">Info Umum</string>
+    <string name="tab_text_2">Info Tagihan</string>
+
 </resources>

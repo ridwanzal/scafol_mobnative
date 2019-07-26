@@ -12,7 +12,10 @@
     <RelativeLayout
         android:id="@+id/cont_paket"
         android:background="?android:attr/selectableItemBackground"
-        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView

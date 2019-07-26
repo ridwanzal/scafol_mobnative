@@ -21,6 +21,10 @@
             android:label="Login">
         </activity>
         <activity
+            android:name=".activity.ActivityMapDetail"
+            android:label="Project Location">
+        </activity>
+        <activity
             android:name=".activity.ActivityNotif"
             android:label="Notification">
         </activity>

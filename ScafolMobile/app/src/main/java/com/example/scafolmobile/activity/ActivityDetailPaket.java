@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -19,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.example.scafolmobile.R;
@@ -83,6 +85,8 @@ public class ActivityDetailPaket extends AppCompatActivity {
     private GoogleApiClient mGoogleApiClient;
     int PICK_IMAGE_REQUEST = 1;
 
+    private CardView cardView;
+
 
     SessionManager sessionManager;
     @Override
@@ -115,6 +119,8 @@ public class ActivityDetailPaket extends AppCompatActivity {
 
         text_nilaikontrak = (TextView) findViewById(R.id.text_nilaikontrak);
         text_progress = (TextView) findViewById(R.id.text_progress);
+
+        cardView = (CardView) findViewById(R.id.map_card);
 
 
         Intent intent = getIntent();
@@ -156,6 +162,15 @@ public class ActivityDetailPaket extends AppCompatActivity {
             @Override
             public void onFailure(Call<DataResponsePaket> call, Throwable t) {
                 Log.e(TAG, t.toString());
+            }
+        });
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent mapIntent = new Intent(ActivityDetailPaket.this, ActivityMapDetail.class);
+                startActivity(mapIntent);
             }
         });
     }

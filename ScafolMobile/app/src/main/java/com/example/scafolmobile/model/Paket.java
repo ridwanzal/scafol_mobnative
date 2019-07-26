@@ -30,8 +30,12 @@ public class Paket implements Serializable {
     private String paLokasi;
     @SerializedName("pa_loc_latitude")
     private String paLocLatitude;
+    @SerializedName("pa_loc_longitude")
+    private String paLongitude;
+
     @SerializedName("pa_nomor_kontrak")
     private String paNomorKontrak;
+
     @SerializedName("pa_nilai_kontrak")
     private String paNilaiKontrak;
     @SerializedName("pa_rencana_kontrak")
@@ -44,7 +48,6 @@ public class Paket implements Serializable {
     private String dateCreated;
     @SerializedName("date_updated")
     private String dateUpdated;
-
     public Paket(String paId, String keId, String pekerjaId, String pptkId, String paJudul, String paJenis, String paVolume, String paSatuan, String paTahun, String paPagu, String paLokasi, String paLocLatitude, String paNomorKontrak, String paNilaiKontrak, String paRencanKonrak, String paAwalKontrak, String status, String dateCreated, String dateUpdated) {
         this.paId = paId;
         this.keId = keId;
@@ -58,6 +61,7 @@ public class Paket implements Serializable {
         this.paPagu = paPagu;
         this.paLokasi = paLokasi;
         this.paLocLatitude = paLocLatitude;
+        this.paLocLatitude = paLocLatitude;
         this.paNomorKontrak = paNomorKontrak;
         this.paNilaiKontrak = paNilaiKontrak;
         this.paRencanKonrak = paRencanKonrak;
@@ -65,6 +69,14 @@ public class Paket implements Serializable {
         this.status = status;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
+    }
+
+    public String getPaLongitude() {
+        return paLongitude;
+    }
+
+    public void setPaLongitude(String paLongitude) {
+        this.paLongitude = paLongitude;
     }
 
     @Override

@@ -146,7 +146,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
                     text_judul.setText(checkData(name));
                     text_jenis.setText(checkData(jenis));
                     text_tahun.setText(checkData(tahun));
-                    text_pagu.setText(formatMoneyIDR.convertIDR(pagu));
+                    text_pagu.setText("Rp. " + formatMoneyIDR.convertIDR(pagu));
 
                     text_namapptk.setText(checkData(user_fullname));
 
@@ -155,7 +155,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
                     text_status.setText(checkData(status));
                     text_tanggal_mulai.setText(checkData(tanggal_awal));
                     text_tanggal_akhir.setText(checkData(tanggal_akhir));
-                    text_nilaikontrak.setText(formatMoneyIDR.convertIDR(nilai_kontrak));
+                    text_nilaikontrak.setText("Rp. " + formatMoneyIDR.convertIDR(nilai_kontrak));
                 }
             }
 
@@ -168,9 +168,39 @@ public class ActivityDetailPaket extends AppCompatActivity {
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = getIntent();
+                String id_paket = intent.getStringExtra("pa_id");
+                Call<DataResponsePaket> call_paket = apiInterface.getPaketId(id_paket);
+                call_paket.enqueue(new Callback<DataResponsePaket>() {
+                    @Override
+                    public void onResponse(Call<DataResponsePaket> call, Response<DataResponsePaket> response) {
+                        Log.w(TAG, "Paket data" + new Gson().toJson(response.body().getData()));
+                        ArrayList<Paket> paketlist = response.body().getData();
+//                        for(int i = 0; i < paketlist.size(); i++){
+//                            String name = paketlist.get(i).getPaJudul();
+//                            String jenis = paketlist.get(i).getPaJenis();
+//                            String tahun = paketlist.get(i).getPaTahun();
+//                            String pagu = paketlist.get(i).getPaPagu();
+//                            String satuan = paketlist.get(i).getPaSatuan();
+//                            String volume = paketlist.get(i).getPaVolume();
+//                            String status = paketlist.get(i).getStatus();
+//                            String tanggal_awal = paketlist.get(i).getDateCreated();
+//                            String tanggal_akhir = paketlist.get(i).getDateUpdated();
+//                            String nilai_kontrak = paketlist.get(i).getPaNilaiKontrak();
+//                        }
+                        Intent mapIntent = new Intent(ActivityDetailPaket.this, ActivityMapDetail.class);
+                        Bundle args = new Bundle();
+                        args.putSerializable("ARRAYLIST", paketlist);
+                        mapIntent.putExtra("BUNDLE", args);
+                        startActivity(mapIntent);
+                    }
 
-                Intent mapIntent = new Intent(ActivityDetailPaket.this, ActivityMapDetail.class);
-                startActivity(mapIntent);
+                    @Override
+                    public void onFailure(Call<DataResponsePaket> call, Throwable t) {
+                        Log.e(TAG, t.toString());
+                    }
+                });
+
             }
         });
     }
@@ -225,6 +255,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
         switch (item.getItemId()){
             case android.R.id.home :
                 finish();
+                return true;
             case R.id.nav_upload :
                 fileChooser();
                 return true;

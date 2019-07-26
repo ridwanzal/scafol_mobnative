@@ -1,12 +1,17 @@
 package com.example.scafolmobile.activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.scafolmobile.R;
+import com.example.scafolmobile.model.Paket;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -15,10 +20,13 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 
+import java.util.ArrayList;
+
 public class ActivityMapDetail extends AppCompatActivity {
     MapView map = null;
     Context context;
-
+    GeoPoint startPoint;
+    Marker startMarker;
     public ActivityMapDetail(){
         // simple constructor
     }
@@ -34,21 +42,37 @@ public class ActivityMapDetail extends AppCompatActivity {
         Context ctx = getApplicationContext();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         setContentView(R.layout.activity_mapdetailpaket);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        Bundle args = intent.getBundleExtra("BUNDLE");
+        ArrayList<Paket> object = (ArrayList<Paket>) args.getSerializable("ARRAYLIST");
         map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
-        mapController.setZoom(10);
-        GeoPoint startPoint = new GeoPoint(-3.1797885, 102.3501403);
+        mapController.setZoom(12.5);
+        for(int i = 0; i < object.size(); i++){
+            String location_name =  object.get(i).getPaLokasi();
+            Double latitude = Double.valueOf(object.get(i).getPaLocLatitude());
+            Double longitude = Double.valueOf(object.get(i).getPaLongitude());
+
+            startPoint = new GeoPoint(latitude, longitude);
+            startMarker = new Marker(map);
+            startMarker.setPosition(startPoint);
+            startMarker.setTextLabelBackgroundColor(getResources().getColor(R.color.colorMain));
+            startMarker.setTextLabelFontSize(14);
+            startMarker.setTextLabelForegroundColor(getResources().getColor(R.color.colorMain));
+            startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
+            startMarker.setTitle(location_name);
+        }
+
+
         mapController.setCenter(startPoint);
 
         // set marker
-        Marker startMarker = new Marker(map);
-            startMarker.setPosition(startPoint);
-        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
-        startMarker.setTitle("Location");
         map.getOverlays().add(startMarker);
 
     }
@@ -63,6 +87,16 @@ public class ActivityMapDetail extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         map.onPause();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+            default :
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

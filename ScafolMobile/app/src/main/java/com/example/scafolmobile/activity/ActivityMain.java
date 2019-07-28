@@ -172,6 +172,20 @@ public class ActivityMain extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.right_menu_paket, menu);
+        MenuItem searMenuItem = menu.findItem(R.id.nav_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searMenuItem);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                paketAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
         return true;
     }
 
@@ -212,21 +226,4 @@ public class ActivityMain extends AppCompatActivity{
         sessionManager.checkLogin();
     }
 
-    private void search(SearchView searchView) {
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-
-                paketAdapter.getFilter().filter(newText);
-                return true;
-            }
-        });
-    }
 }

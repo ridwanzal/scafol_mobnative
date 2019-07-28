@@ -22,6 +22,7 @@ import java.util.List;
 
 public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHolder> implements Filterable{
     private ArrayList<Paket> paketList;
+    private ArrayList<Paket> paketListFull;
     Context mContext;
     ItemClickListener listener;
     private List<Paket> paketList2;
@@ -37,6 +38,7 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHol
     public PaketAdapter(Context mContext, ArrayList<Paket> paketList, ItemClickListener listener){
         this.paketList = paketList;
         this.mContext = mContext;
+        paketListFull = new ArrayList<>(paketList);
         this.listener = listener;
     }
 
@@ -74,8 +76,41 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHol
 
     @Override
     public Filter getFilter() {
-        return null;
+        return paketFilter;
     }
+
+    private Filter paketFilter = new Filter() {
+        @Override
+        public CharSequence convertResultToString(Object resultValue) {
+            return super.convertResultToString(resultValue);
+        }
+
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+            ArrayList<Paket> filteredlist = new ArrayList<>();
+            if(charSequence == null || charSequence.length() == 0){
+                filteredlist.addAll(paketListFull);
+            }else{
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+                for(Paket item : paketListFull){
+                    if(item.getPaJudul().toLowerCase().contains(filterPattern)){
+                        filteredlist.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredlist;
+
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            paketList.clear();
+            paketList.addAll((ArrayList) filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     class PaketViewHolder extends RecyclerView.ViewHolder{
         TextView paket_nama;
@@ -93,4 +128,6 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHol
             layout_paketid = (RelativeLayout) itemView.findViewById(R.id.layout_paketid);
         }
     }
+
+
 }

@@ -29,6 +29,10 @@
             android:label="Notification">
         </activity>
         <activity
+            android:name=".activity.ActivityUpdateData"
+            android:label="Update Data">
+        </activity>
+        <activity
             android:name=".activity.ActivityDashboard"
             android:label="Scafol"
             android:drawable="@drawable/ic_logo_main"

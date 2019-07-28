@@ -256,8 +256,38 @@ public class ActivityDetailPaket extends AppCompatActivity {
             case android.R.id.home :
                 finish();
                 return true;
+//            case R.id.nav_upload :
+//                fileChooser();
+//                return true;
+            case R.id.nav_kurvasrencana :
+                Intent intent = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent.putExtra("position", 0);
+                startActivity(intent);
+                return true;
+            case R.id.nav_editkontrak :
+                Intent intent2 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent2.putExtra("position", 1);
+                startActivity(intent2);
+                return true;
+            case R.id.nav_editlokasi :
+                Intent intent3 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent3.putExtra("position", 2);
+                startActivity(intent3);
+                return true;
+            case R.id.nav_progress :
+                Intent intent4 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent4.putExtra("position", 3);
+                startActivity(intent4);
+                return true;
+            case R.id.nav_penyediajasa :
+                Intent intent5 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent5.putExtra("position", 4);
+                startActivity(intent5);
+                return true;
             case R.id.nav_upload :
-                fileChooser();
+                Intent intent6 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
+                intent6.putExtra("position", 5);
+                startActivity(intent6);
                 return true;
             default :
                 return super.onOptionsItemSelected(item);

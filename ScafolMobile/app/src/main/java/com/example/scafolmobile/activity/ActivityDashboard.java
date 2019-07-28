@@ -1,5 +1,6 @@
 package com.example.scafolmobile.activity;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,7 +36,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ActivityDashboard extends AppCompatActivity {
-    private Button show_list;
+    private Button show_list; // button paket fisik
+    private Button show_list2; // button anggaran
     private static String TAG = "ActivityDashboard";
     SessionManager sessionManager;
     public static ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -56,9 +59,12 @@ public class ActivityDashboard extends AppCompatActivity {
 
     private Date date;
 
+    private LinearLayout container_dashboards;
+
     private String total_paket;
     private String total_progress;
     private String total_paket_belum;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,9 @@ public class ActivityDashboard extends AppCompatActivity {
         String user_fullname = user.get(SessionManager.KEY_NAME);
         String user_name = user.get(SessionManager.KEY_USERNAME);
         show_list = (Button) findViewById(R.id.btn_tolist);
+        show_list2 = (Button) findViewById(R.id.btn_tolist2);
+        progress = new ProgressDialog(this);
+
 
 //        Toast.makeText(ActivityDashboard.this, "Masuk pak eko", Toast.LENGTH_SHORT).show();
         tx_dashtotalpaket = (TextView) findViewById(R.id.tx_dashtotalpaket);
@@ -88,7 +97,10 @@ public class ActivityDashboard extends AppCompatActivity {
         tx_namauser = (TextView) findViewById(R.id.tx_namauser);
         tx_dashbelum = (TextView) findViewById(R.id.tx_dashpaketbelum);
         tx_dashselesai = (TextView) findViewById(R.id.tx_dashpaketselesai);
+        container_dashboards = (LinearLayout) findViewById(R.id.container_dashboards);
+        container_dashboards.setVisibility(View.GONE);
 
+//        progress.show(this, "", "Please wait");
         date = Calendar.getInstance().getTime();
         SimpleDateFormat format1 = new SimpleDateFormat("yyyy/MM/dd");
         String date_result = format1.format(date);
@@ -249,6 +261,7 @@ public class ActivityDashboard extends AppCompatActivity {
         tx_dashongoing.setText("0");
         tx_dashselesai.setText("0");
 
+        // onclick activity paket fisik
         show_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -256,6 +269,20 @@ public class ActivityDashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // onclick activity anggaran/ paket non fisik
+        show_list2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //
+            }
+        });
+
+        container_dashboards.setVisibility(View.VISIBLE);
+        if(container_dashboards.getVisibility() == View.VISIBLE){
+//            progress.hide();
+        }
+
     }
 
     @Override

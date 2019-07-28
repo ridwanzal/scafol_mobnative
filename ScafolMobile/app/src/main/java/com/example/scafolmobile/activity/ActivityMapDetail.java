@@ -52,7 +52,7 @@ public class ActivityMapDetail extends AppCompatActivity {
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
-        mapController.setZoom(12.5);
+        mapController.setZoom(16);
         for(int i = 0; i < object.size(); i++){
             String location_name =  object.get(i).getPaLokasi();
             Double latitude = Double.valueOf(object.get(i).getPaLocLatitude());

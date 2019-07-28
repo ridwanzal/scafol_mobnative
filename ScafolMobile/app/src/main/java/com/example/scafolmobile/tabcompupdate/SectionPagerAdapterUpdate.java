@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.scafolmobile.Fragment.FragmentEditKontrak;
+import com.example.scafolmobile.fragment.FragmentEditKontrak;
 import com.example.scafolmobile.R;
+import com.example.scafolmobile.fragment.FragmentUploadData;
 
 public class SectionPagerAdapterUpdate extends FragmentPagerAdapter {
     @StringRes
@@ -44,7 +45,7 @@ public class SectionPagerAdapterUpdate extends FragmentPagerAdapter {
             case 4 :
                 return new FragmentEditKontrak();
             case 5 :
-                return new FragmentEditKontrak();
+                return new FragmentUploadData(); // upload
             default:
                 return null;
         }

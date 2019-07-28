@@ -1,4 +1,4 @@
-package com.example.scafolmobile.Fragment;
+package com.example.scafolmobile.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

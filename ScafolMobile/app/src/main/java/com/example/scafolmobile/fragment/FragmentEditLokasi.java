@@ -33,6 +33,7 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -101,6 +102,7 @@ public class FragmentEditLokasi extends Fragment {
                     startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
                     startMarker.setTitle(location_name);
+                    startMarker.showInfoWindow();
                     startMarker.setDraggable(true);
                     startMarker.setVisible(true);
                     startMarker.setOnMarkerDragListener(new Marker.OnMarkerDragListener() {
@@ -120,6 +122,9 @@ public class FragmentEditLokasi extends Fragment {
                             tx_latitude.setText(result[0]);
                             tx_longitude.setText(result[1]);
                             btn_changelocation.setVisibility(View.VISIBLE);
+                            final String requestString = "http://nominatim.openstreetmap.org/reverse?format=json&lat=" +
+                                    result[0]+ "&lon=" + result[1] + "&zoom=18&addressdetails=1";
+                            // https://nominatim.openstreetmap.org/reverse?format=json&lat=-4.0434788&lon=103.1843811&zoom=18&addressdetails=1
                         }
 
                         @Override

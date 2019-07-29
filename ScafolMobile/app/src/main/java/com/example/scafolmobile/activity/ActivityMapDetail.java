@@ -66,13 +66,12 @@ public class ActivityMapDetail extends AppCompatActivity {
             startMarker.setPosition(startPoint);
             startMarker.setTextLabelBackgroundColor(getResources().getColor(R.color.colorMain));
             startMarker.setTextLabelFontSize(14);
-            startMarker.showInfoWindow();
             startMarker.setTextLabelForegroundColor(getResources().getColor(R.color.colorMain));
             startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
             startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
             startMarker.setTitle(location_name);
-            startMarker.setDraggable(true);
-
+            startMarker.showInfoWindow();
+            startMarker.setVisible(true);
         }
 
         mapController.stopPanning();

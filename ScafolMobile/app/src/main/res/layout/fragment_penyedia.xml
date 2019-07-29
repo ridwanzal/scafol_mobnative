@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#eee"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edittext_namalokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_generic"
+            android:textSize="14dp"
+            android:padding="10dp"
+            android:hint="Nama Lokasi"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/edittext_lat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/edittext_generic"
+            android:hint="Latitude"
+            android:textSize="14dp"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/edittext_longitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_generic"
+            android:textSize="14dp"
+            android:padding="10dp"
+            android:hint="Longitude"
+            android:layout_marginBottom="5dp"
+            />
+
+        <Button
+            android:id="@+id/btn_changelocation"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:clickable="true"
+            android:background="@drawable/button_ripple"
+            android:text="Change Location" />
+    </LinearLayout>
+</LinearLayout>

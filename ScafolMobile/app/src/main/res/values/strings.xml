@@ -21,6 +21,11 @@
     <string name="update_progress">Progress</string>
     <string name="update_penyediajasa">Penyedia Jasa</string>
     <string name="update_upload">Upload Data</string>
+    <string name="kurva_s">Kurva S Rencana</string>
+    <string name="date">Tanggal</string>
+    <string name="progress">Progress</string>
+    <string name="date_range">Date Range</string>
+    <string name="submit">Submit</string>
 
 
 </resources>

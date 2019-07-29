@@ -12,8 +12,6 @@ import androidx.fragment.app.Fragment;
 import com.example.scafolmobile.R;
 
 public class FragmentUploadData extends Fragment {
-
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

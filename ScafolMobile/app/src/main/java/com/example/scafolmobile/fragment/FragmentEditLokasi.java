@@ -23,6 +23,7 @@ import com.example.scafolmobile.model.DataResponsePaket;
 import com.example.scafolmobile.model.NominatimReverseMap;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
+import com.example.scafolmobile.restapi.ApiClientCustom;
 import com.example.scafolmobile.restapi.ApiInterface;
 import com.example.scafolmobile.restapi.ApiInterfaceCustom;
 import com.google.gson.Gson;
@@ -41,6 +42,8 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FragmentEditLokasi extends Fragment {
     public static String TAG = "FragmentEditLokasi";
@@ -54,7 +57,8 @@ public class FragmentEditLokasi extends Fragment {
     EditText tx_locname;
     Button btn_changelocation;
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-    ApiInterfaceCustom apiInterfaceCustom = ApiClient.getClientCustom().create(ApiInterfaceCustom.class);
+    ApiInterfaceCustom apiInterfaceCustom = ApiClientCustom.getClientCustom().create(ApiInterfaceCustom.class);
+    Retrofit retrofit_custom;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,7 +107,7 @@ public class FragmentEditLokasi extends Fragment {
                     startMarker.setTextLabelFontSize(14);
                     startMarker.setTextLabelForegroundColor(getResources().getColor(R.color.colorMain));
                     startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-                    startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
+                    startMarker.setIcon(getResources().getDrawable(R.drawable.ic_locations_on_black_60dp));
                     startMarker.setTitle(location_name);
                     startMarker.showInfoWindow();
                     startMarker.setDraggable(true);
@@ -125,14 +129,16 @@ public class FragmentEditLokasi extends Fragment {
                             tx_latitude.setText(result[0]);
                             tx_longitude.setText(result[1]);
                             btn_changelocation.setVisibility(View.VISIBLE);
-                            final String requestString = "http://nominatim.openstreetmap.org/reverse?format=json&lat=" +
-                                    result[0]+ "&lon=" + result[1] + "&zoom=18&addressdetails=1";
-                            // https://nominatim.openstreetmap.org/reverse?format=json&lat=-4.0434788&lon=103.1843811&zoom=18&addressdetails=1
-                            Call<NominatimReverseMap>  call_reverselatlong = apiInterfaceCustom.reverseLatLang("json", result[0],  result[1], "18", "1");
+                            Call<NominatimReverseMap> call_reverselatlong = apiInterfaceCustom.reverseLatLang("json", result[0],  result[1], "18", "1");
                             call_reverselatlong.enqueue(new Callback<NominatimReverseMap>() {
                                 @Override
                                 public void onResponse(Call<NominatimReverseMap> call, Response<NominatimReverseMap> response) {
-
+                                    Log.d(TAG, "INI RESPONSE BORORORORORORO===========>" + new Gson().toJson(response));
+                                    if(response.isSuccessful()){
+                                        Log.d(TAG, "INI BERHASIL ================> " + response.body().getDisplay_name());
+                                        tx_locname.setText(response.body().getDisplay_name());
+                                        startMarker.setTitle(response.body().getDisplay_name());
+                                    }
                                 }
 
                                 @Override

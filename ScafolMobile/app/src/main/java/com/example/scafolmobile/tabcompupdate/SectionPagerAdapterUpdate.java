@@ -10,6 +10,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.scafolmobile.fragment.FragmentEditKontrak;
 import com.example.scafolmobile.R;
+import com.example.scafolmobile.fragment.FragmentEditLokasi;
+import com.example.scafolmobile.fragment.FragmentKurvaS;
+import com.example.scafolmobile.fragment.FragmentPenyediaJasa;
+import com.example.scafolmobile.fragment.FragmentProgress;
 import com.example.scafolmobile.fragment.FragmentUploadData;
 
 public class SectionPagerAdapterUpdate extends FragmentPagerAdapter {
@@ -35,15 +39,15 @@ public class SectionPagerAdapterUpdate extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch (position){
             case 0 :
-                return new FragmentEditKontrak();
+                return new FragmentKurvaS();
             case 1 :
                 return new FragmentEditKontrak();
             case 2 :
-                return new FragmentEditKontrak();
+                return new FragmentEditLokasi();
             case 3 :
-                return new FragmentEditKontrak();
+                return new FragmentProgress();
             case 4 :
-                return new FragmentEditKontrak();
+                return new FragmentPenyediaJasa();
             case 5 :
                 return new FragmentUploadData(); // upload
             default:

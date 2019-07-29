@@ -7,7 +7,9 @@ import com.example.scafolmobile.model.DataResponsePaket;
 
 import retrofit2.Call;
 
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
@@ -52,6 +54,5 @@ public interface ApiInterface {
 
     @GET("dashboardpptk/realpptk/")
     Call<DataResponsePA> countRealPPTK(@Query("pptk_id") String pptk_id);
-
 
 }

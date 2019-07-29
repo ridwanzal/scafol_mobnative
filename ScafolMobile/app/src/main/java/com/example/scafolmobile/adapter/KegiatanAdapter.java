@@ -59,8 +59,8 @@ public class KegiatanAdapter extends RecyclerView.Adapter<KegiatanAdapter.Kegiat
 
         KegiatanViewHolder(View itemView){
             super(itemView);
-            keg_nama = (TextView) itemView.findViewById(R.id.txt_nama_kegiatan);
-            keg_rek = (TextView) itemView.findViewById(R.id.txt_rekening);
+            keg_nama = itemView.findViewById(R.id.txt_nama_kegiatan);
+            keg_rek = itemView.findViewById(R.id.txt_rekening);
         }
     }
 }

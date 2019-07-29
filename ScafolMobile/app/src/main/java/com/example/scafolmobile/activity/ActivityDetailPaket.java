@@ -104,23 +104,23 @@ public class ActivityDetailPaket extends AppCompatActivity {
         final String user_fullname = user.get(SessionManager.KEY_NAME);
         String user_name = user.get(SessionManager.KEY_USERNAME);
 
-        text_namapptk = (TextView) findViewById(R.id.text_namapptk);
+        text_namapptk = findViewById(R.id.text_namapptk);
 
-        text_judul = (TextView) findViewById(R.id.text_judul);
-        text_jenis = (TextView) findViewById(R.id.text_jenis);
-        text_tahun = (TextView) findViewById(R.id.text_tahun);
-        text_pagu = (TextView) findViewById(R.id.text_pagu);
+        text_judul = findViewById(R.id.text_judul);
+        text_jenis = findViewById(R.id.text_jenis);
+        text_tahun = findViewById(R.id.text_tahun);
+        text_pagu = findViewById(R.id.text_pagu);
 
-        text_satuan = (TextView) findViewById(R.id.text_satuan);
-        text_volume = (TextView) findViewById(R.id.text_volume);
-        text_status = (TextView) findViewById(R.id.text_status);
-        text_tanggal_mulai = (TextView) findViewById(R.id.text_date_created);
-        text_tanggal_akhir = (TextView) findViewById(R.id.text_date_end);
+        text_satuan = findViewById(R.id.text_satuan);
+        text_volume = findViewById(R.id.text_volume);
+        text_status = findViewById(R.id.text_status);
+        text_tanggal_mulai = findViewById(R.id.text_date_created);
+        text_tanggal_akhir = findViewById(R.id.text_date_end);
 
-        text_nilaikontrak = (TextView) findViewById(R.id.text_nilaikontrak);
-        text_progress = (TextView) findViewById(R.id.text_progress);
+        text_nilaikontrak = findViewById(R.id.text_nilaikontrak);
+        text_progress = findViewById(R.id.text_progress);
 
-        cardView = (CardView) findViewById(R.id.map_card);
+        cardView = findViewById(R.id.map_card);
 
 
         Intent intent = getIntent();

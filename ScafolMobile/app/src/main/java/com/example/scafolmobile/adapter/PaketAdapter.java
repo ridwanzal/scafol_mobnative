@@ -44,7 +44,7 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHol
 
     @Override
     public void onBindViewHolder(@NonNull PaketViewHolder holder, int position) {
-        String paket_pagu = formatMoneyIDR.convertIDR(paketList.get(position).getPaPagu().toString());
+        String paket_pagu = formatMoneyIDR.convertIDR(paketList.get(position).getPaPagu());
         holder.paket_nama.setText(paketList.get(position).getPaJudul());
         holder.paket_pagu.setText(paket_pagu);
         holder.paket_id.setText(paketList.get(position).getPaId());
@@ -121,11 +121,11 @@ public class PaketAdapter extends RecyclerView.Adapter<PaketAdapter.PaketViewHol
 
         PaketViewHolder(View itemView){
             super(itemView);
-            paket_nama = (TextView) itemView.findViewById(R.id.txt_nama_paket);
-            paket_pagu = (TextView) itemView.findViewById(R.id.txt_pagu);
-            paket_jenis = (TextView) itemView.findViewById(R.id.txt_pajenis);
-            paket_id = (TextView) itemView.findViewById(R.id.txt_idpaket);
-            layout_paketid = (RelativeLayout) itemView.findViewById(R.id.layout_paketid);
+            paket_nama = itemView.findViewById(R.id.txt_nama_paket);
+            paket_pagu = itemView.findViewById(R.id.txt_pagu);
+            paket_jenis = itemView.findViewById(R.id.txt_pajenis);
+            paket_id = itemView.findViewById(R.id.txt_idpaket);
+            layout_paketid = itemView.findViewById(R.id.layout_paketid);
         }
     }
 

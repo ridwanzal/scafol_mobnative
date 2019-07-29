@@ -20,9 +20,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.scafolmobile.R;
 import com.example.scafolmobile.model.DataResponsePaket;
+import com.example.scafolmobile.model.NominatimReverseMap;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
 import com.example.scafolmobile.restapi.ApiInterface;
+import com.example.scafolmobile.restapi.ApiInterfaceCustom;
 import com.google.gson.Gson;
 
 import org.osmdroid.api.IMapController;
@@ -52,6 +54,7 @@ public class FragmentEditLokasi extends Fragment {
     EditText tx_locname;
     Button btn_changelocation;
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+    ApiInterfaceCustom apiInterfaceCustom = ApiClient.getClientCustom().create(ApiInterfaceCustom.class);
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +128,18 @@ public class FragmentEditLokasi extends Fragment {
                             final String requestString = "http://nominatim.openstreetmap.org/reverse?format=json&lat=" +
                                     result[0]+ "&lon=" + result[1] + "&zoom=18&addressdetails=1";
                             // https://nominatim.openstreetmap.org/reverse?format=json&lat=-4.0434788&lon=103.1843811&zoom=18&addressdetails=1
+                            Call<NominatimReverseMap>  call_reverselatlong = apiInterfaceCustom.reverseLatLang("json", result[0],  result[1], "18", "1");
+                            call_reverselatlong.enqueue(new Callback<NominatimReverseMap>() {
+                                @Override
+                                public void onResponse(Call<NominatimReverseMap> call, Response<NominatimReverseMap> response) {
+
+                                }
+
+                                @Override
+                                public void onFailure(Call<NominatimReverseMap> call, Throwable t) {
+
+                                }
+                            });
                         }
 
                         @Override

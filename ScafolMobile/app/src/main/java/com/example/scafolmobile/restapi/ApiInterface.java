@@ -8,6 +8,7 @@ import com.example.scafolmobile.model.DataResponsePaket;
 import retrofit2.Call;
 
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -54,7 +55,11 @@ public interface ApiInterface {
 
     @GET("dashboardpptk/realpptk/")
     Call<DataResponsePA> countRealPPTK(@Query("pptk_id") String pptk_id);
-//
+
+    @FormUrlEncoded
+    @POST("paket/updatemap/")
+    Call<DataResponsePaket> updateMap(@Field("pa_id") String pa_id,  @Field("pa_lokasi") String pa_lokasi, @Field("pa_loc_latitude") String pa_loc_latitude, @Field("pa_loc_longitude") String pa_loc_longitude);
+
 //    @POST("paket/updatemap/")
 //    Call<DataResponsePA> updateMapPaket(@Field("pa_id") String pa_id, @Field("lat") String lat, @Field("long") String longitude);
 

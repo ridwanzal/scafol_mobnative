@@ -50,6 +50,6 @@
             android:padding="8dp"
             android:clickable="true"
             android:background="@drawable/button_ripple"
-            android:text="Change Location" />
+            android:text="Ubah Lokasi" />
     </LinearLayout>
 </LinearLayout>

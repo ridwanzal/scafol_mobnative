@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -51,6 +52,7 @@ public class FragmentEditLokasi extends Fragment {
     MapEventsReceiver mapEventsReceiver;
     Context context;
     GeoPoint startPoint;
+    ProgressBar progressBar;
     Marker startMarker;
     EditText tx_latitude;
     EditText tx_longitude;
@@ -68,12 +70,14 @@ public class FragmentEditLokasi extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_editlokasi, container, false);
-        Context ctx = getActivity();
+        final Context ctx = getActivity();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         tx_latitude = view.findViewById(R.id.edittext_lat);
         tx_longitude = view.findViewById(R.id.edittext_longitude);
         tx_locname = view.findViewById(R.id.edittext_namalokasi);
         btn_changelocation = view.findViewById(R.id.btn_changelocation);
+        progressBar = view.findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
         map = (MapView) view.findViewById(R.id.map2);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
@@ -83,14 +87,19 @@ public class FragmentEditLokasi extends Fragment {
         startPoint = new GeoPoint(-2.9547949, 104.6929245);
         mapController.setCenter(startPoint);
         Intent intent = getActivity().getIntent();
-        String id_paket = intent.getStringExtra("pa_id");
+        final String id_paket = intent.getStringExtra("pa_id");
         Call<DataResponsePaket> call_paket = apiInterface.getPaketId(id_paket);
         call_paket.enqueue(new Callback<DataResponsePaket>() {
             public void onResponse(Call<DataResponsePaket> call, Response<DataResponsePaket> response) {
                 Log.w(TAG, "GET DATA PAKETSSSSSSSSSSSSSSSSS" + new Gson().toJson(response.body().getData()));
                 ArrayList<Paket> paketlist = response.body().getData();
                 for(int i = 0; i < paketlist.size(); i++){
-                    String location_name =  paketlist.get(i).getPaLokasi();
+                    String location_name = "";
+                    if(paketlist.get(i).getPaLokasi() == ""){
+                        location_name = "Location not set";
+                    }else{
+                        location_name = paketlist.get(i).getPaLokasi();
+                    }
                     String nomor_kontrak = paketlist.get(i).getPaNomorKontrak();
                     String nilai_kontrak = paketlist.get(i).getPaNilaiKontrak();
                     String awal_kontrak = paketlist.get(i).getPaAwalKontrak();
@@ -104,7 +113,7 @@ public class FragmentEditLokasi extends Fragment {
                     startMarker = new Marker(map);
                     startMarker.setPosition(startPoint);
                     startMarker.setTextLabelBackgroundColor(getResources().getColor(R.color.colorMain));
-                    startMarker.setTextLabelFontSize(14);
+                    startMarker.setTextLabelFontSize(9);
                     startMarker.setTextLabelForegroundColor(getResources().getColor(R.color.colorMain));
                     startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
                     startMarker.setIcon(getResources().getDrawable(R.drawable.ic_locations_on_black_60dp));
@@ -123,9 +132,11 @@ public class FragmentEditLokasi extends Fragment {
 
                         @Override
                         public void onMarkerDragEnd(Marker marker) {
+                            progressBar.setVisibility(View.VISIBLE);
                             String data_map = marker.getPosition().toString();
                             String[] result = data_map.split(",");
                             Log.d(TAG, "ON DRAG SOMETHING " + result[0] + " | " + result[1]);
+                            startPoint = new GeoPoint(Double.valueOf(result[0]), Double.valueOf(result[1]));
                             tx_latitude.setText(result[0]);
                             tx_longitude.setText(result[1]);
                             btn_changelocation.setVisibility(View.VISIBLE);
@@ -138,6 +149,10 @@ public class FragmentEditLokasi extends Fragment {
                                         Log.d(TAG, "INI BERHASIL ================> " + response.body().getDisplay_name());
                                         tx_locname.setText(response.body().getDisplay_name());
                                         startMarker.setTitle(response.body().getDisplay_name());
+                                        startMarker.showInfoWindow();
+                                        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+                                        progressBar.setVisibility(View.GONE);
+
                                     }
                                 }
 
@@ -169,8 +184,29 @@ public class FragmentEditLokasi extends Fragment {
             @Override
             public void onClick(View view) {
                 // submit data to update location.
+                progressBar.setVisibility(View.VISIBLE);
                 String get_lat = tx_latitude.getText().toString();
-                Log.d(TAG, "lATITUDE : " + get_lat);
+                String get_long = tx_longitude.getText().toString();
+                String get_name = tx_locname.getText().toString();
+                String pa_id = id_paket;
+                Log.d(TAG, "lATITUDE : " + get_lat + " LONGITUDE : " + get_long + " | " + id_paket);
+                Call<DataResponsePaket> call_update = apiInterface.updateMap(pa_id, get_name, get_lat, get_long);
+                call_update.enqueue(new Callback<DataResponsePaket>() {
+                    @Override
+                    public void onResponse(Call<DataResponsePaket> call, Response<DataResponsePaket> response) {
+                            Log.d(TAG, "Response Result Success------------------------> : " + response.body());
+                            progressBar.setVisibility(View.GONE);
+                            Log.d(TAG, "Response Result Success------------------------> : " + response.body());
+                            Toast.makeText(ctx, "Fails", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<DataResponsePaket> call, Throwable t) {
+                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(ctx, "Berhasil Ubah Lokasi", Toast.LENGTH_SHORT).show();
+                        btn_changelocation.setVisibility(View.GONE);
+                    }
+                });
             }
         });
 

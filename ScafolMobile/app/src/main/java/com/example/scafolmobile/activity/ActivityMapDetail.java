@@ -55,9 +55,15 @@ public class ActivityMapDetail extends AppCompatActivity {
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         IMapController mapController = map.getController();
-        mapController.setZoom(16);
+        mapController.setZoom(9);
         for(int i = 0; i < object.size(); i++){
-            String location_name =  object.get(i).getPaLokasi();
+            String location_name = "";
+
+            if(object.get(i).getPaLokasi() == ""){
+                location_name = "Location not set";
+            }else{
+                location_name = object.get(i).getPaLokasi();
+            }
             Double latitude = Double.valueOf(object.get(i).getPaLocLatitude());
             Double longitude = Double.valueOf(object.get(i).getPaLongitude());
 

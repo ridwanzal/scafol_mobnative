@@ -68,7 +68,7 @@ public class ActivityMapDetail extends AppCompatActivity {
             startMarker.setTextLabelFontSize(14);
             startMarker.setTextLabelForegroundColor(getResources().getColor(R.color.colorMain));
             startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-            startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
+            startMarker.setIcon(getResources().getDrawable(R.drawable.ic_locations_on_black_60dp));
             startMarker.setTitle(location_name);
             startMarker.showInfoWindow();
             startMarker.setVisible(true);

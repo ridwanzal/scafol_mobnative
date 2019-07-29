@@ -1,4 +1,6 @@
 package com.example.scafolmobile.fragment;
 
-public class FragmentKurvaS {
+import androidx.fragment.app.Fragment;
+
+public class FragmentKurvaS extends Fragment {
 }

@@ -10,6 +10,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
+import com.dropbox.core.v2.DbxDownloadStyleBuilder;
 import com.dropbox.core.v2.users.FullAccount;
 
 import java.io.FileInputStream;

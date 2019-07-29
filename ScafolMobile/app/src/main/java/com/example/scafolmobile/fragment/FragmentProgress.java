@@ -1,4 +1,6 @@
 package com.example.scafolmobile.fragment;
 
-public class FragmentProgress {
+import androidx.fragment.app.Fragment;
+
+public class FragmentProgress extends Fragment {
 }

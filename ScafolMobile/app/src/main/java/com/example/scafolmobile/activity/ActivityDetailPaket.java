@@ -252,6 +252,8 @@ public class ActivityDetailPaket extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intents = getIntent();
+        String id_paket = intents.getStringExtra("pa_id");
         switch (item.getItemId()){
             case android.R.id.home :
                 finish();
@@ -262,31 +264,37 @@ public class ActivityDetailPaket extends AppCompatActivity {
             case R.id.nav_kurvasrencana :
                 Intent intent = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent.putExtra("position", 0);
+                intent.putExtra("pa_id", id_paket);
                 startActivity(intent);
                 return true;
             case R.id.nav_editkontrak :
                 Intent intent2 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent2.putExtra("position", 1);
+                intent2.putExtra("pa_id", id_paket);
                 startActivity(intent2);
                 return true;
             case R.id.nav_editlokasi :
                 Intent intent3 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent3.putExtra("position", 2);
+                intent3.putExtra("pa_id", id_paket);
                 startActivity(intent3);
                 return true;
             case R.id.nav_progress :
                 Intent intent4 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent4.putExtra("position", 3);
+                intent4.putExtra("pa_id", id_paket);
                 startActivity(intent4);
                 return true;
             case R.id.nav_penyediajasa :
                 Intent intent5 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent5.putExtra("position", 4);
+                intent5.putExtra("pa_id", id_paket);
                 startActivity(intent5);
                 return true;
             case R.id.nav_upload :
                 Intent intent6 = new Intent(ActivityDetailPaket.this, ActivityUpdateData.class);
                 intent6.putExtra("position", 5);
+                intent6.putExtra("pa_id", id_paket);
                 startActivity(intent6);
                 return true;
             default :

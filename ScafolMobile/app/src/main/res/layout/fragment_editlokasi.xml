@@ -20,23 +20,35 @@
         android:padding="10dp"
         android:orientation="vertical"
         android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/edittext_namalokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_generic"
+            android:textSize="14dp"
+            android:padding="10dp"
+            android:hint="Nama Lokasi"
+            android:layout_marginBottom="5dp"
+            />
 
         <EditText
+            android:id="@+id/edittext_lat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:background="#fff"
+            android:background="@drawable/edittext_generic"
             android:hint="Latitude"
             android:textSize="14dp"
-            android:padding="5dp" />
+            android:padding="10dp" />
 
         <EditText
-            android:padding="5dp"
+            android:id="@+id/edittext_longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#fff"
+            android:background="@drawable/edittext_generic"
             android:textSize="14dp"
-            android:hint="Latitude"
+            android:padding="10dp"
+            android:hint="Longitude"
             android:layout_marginBottom="5dp"
             />
     </LinearLayout>

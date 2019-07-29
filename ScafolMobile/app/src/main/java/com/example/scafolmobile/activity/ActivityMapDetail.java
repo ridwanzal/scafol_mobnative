@@ -46,7 +46,7 @@ public class ActivityMapDetail extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
-        ArrayList<Paket> object = (ArrayList<Paket>) args.getSerializable("ARRAYLIST");
+        ArrayList<Paket> object = (ArrayList<Paket>) args.getSerializable("\n");
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);

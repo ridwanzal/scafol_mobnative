@@ -3,6 +3,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ public class ActivityMapDetail extends AppCompatActivity {
     Context context;
     GeoPoint startPoint;
     Marker startMarker;
+    private static String TAG = "ActivityMapDetail";
+
     public ActivityMapDetail(){
         // simple constructor
     }
@@ -39,7 +42,7 @@ public class ActivityMapDetail extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Context ctx = getApplicationContext();
+        final Context ctx = getApplicationContext();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
         setContentView(R.layout.activity_mapdetailpaket);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -47,7 +50,7 @@ public class ActivityMapDetail extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Paket> object = (ArrayList<Paket>) args.getSerializable("ARRAYLIST");
-        map = (MapView) findViewById(R.id.map);
+        map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
@@ -67,9 +70,11 @@ public class ActivityMapDetail extends AppCompatActivity {
             startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
             startMarker.setIcon(getResources().getDrawable(R.drawable.ic_pin_drop_black_24dp));
             startMarker.setTitle(location_name);
+            startMarker.showInfoWindow();
+            startMarker.setVisible(true);
         }
 
-
+        mapController.stopPanning();
         mapController.setCenter(startPoint);
 
         // set marker

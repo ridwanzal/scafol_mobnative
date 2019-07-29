@@ -130,7 +130,7 @@ public class ActivityMain extends AppCompatActivity{
     }
 
     private void generateKegiatanList(ArrayList<Kegiatan> kegiatanList){
-        recyclerView = (RecyclerView) findViewById(R.id.recycle_listkegiatan);
+        recyclerView = findViewById(R.id.recycle_listkegiatan);
         kegiatanAdapter = new KegiatanAdapter(kegiatanList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ActivityMain.this);
         recyclerView.setLayoutManager(layoutManager);
@@ -138,14 +138,14 @@ public class ActivityMain extends AppCompatActivity{
     }
 
     private void generatePaketList(ArrayList<Paket> paketList){
-        recyclerView = (RecyclerView) findViewById(R.id.recycle_listpaket);
+        recyclerView = findViewById(R.id.recycle_listpaket);
 
         paketAdapter = new PaketAdapter(getApplicationContext(), paketList, new ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 final TextView get_id;
                 String getid_paket = "";
-                get_id = (TextView) view.findViewById(R.id.txt_idpaket);
+                get_id = view.findViewById(R.id.txt_idpaket);
                 getid_paket = (String) get_id.getText();
                 Intent intent = new Intent(getApplicationContext(), ActivityDetailPaket.class);
                 intent.putExtra("pa_id", getid_paket);
@@ -162,8 +162,8 @@ public class ActivityMain extends AppCompatActivity{
                 // do nothing here
             }
         });
-        total_paket_info = (TextView) findViewById(R.id.total_paket_caption);
-        total_paket_info.setText("Total Paket  : "   + String.valueOf(paketAdapter.getItemCount()));
+        total_paket_info = findViewById(R.id.total_paket_caption);
+        total_paket_info.setText("Total Paket  : "   + paketAdapter.getItemCount());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ActivityMain.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(paketAdapter);

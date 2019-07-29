@@ -82,22 +82,22 @@ public class ActivityDashboard extends AppCompatActivity {
         String bi_id = "";
         String user_fullname = user.get(SessionManager.KEY_NAME);
         String user_name = user.get(SessionManager.KEY_USERNAME);
-        show_list = (Button) findViewById(R.id.btn_tolist);
-        show_list2 = (Button) findViewById(R.id.btn_tolist2);
+        show_list = findViewById(R.id.btn_tolist);
+        show_list2 = findViewById(R.id.btn_tolist2);
         progress = new ProgressDialog(this);
 
 
 //        Toast.makeText(ActivityDashboard.this, "Masuk pak eko", Toast.LENGTH_SHORT).show();
-        tx_dashtotalpaket = (TextView) findViewById(R.id.tx_dashtotalpaket);
-        tx_dashongoing = (TextView) findViewById(R.id.tx_dsahongoing);
-        tx_dashpagu = (TextView) findViewById(R.id.tx_dashpagu);
-        tx_dashreal = (TextView) findViewById(R.id.tx_dashreal);
-        tx_dashsisa = (TextView) findViewById(R.id.tx_dashsisa);
-        tx_datecalendar = (TextView) findViewById(R.id.tx_datecalendar);
-        tx_namauser = (TextView) findViewById(R.id.tx_namauser);
-        tx_dashbelum = (TextView) findViewById(R.id.tx_dashpaketbelum);
-        tx_dashselesai = (TextView) findViewById(R.id.tx_dashpaketselesai);
-        container_dashboards = (LinearLayout) findViewById(R.id.container_dashboards);
+        tx_dashtotalpaket = findViewById(R.id.tx_dashtotalpaket);
+        tx_dashongoing = findViewById(R.id.tx_dsahongoing);
+        tx_dashpagu = findViewById(R.id.tx_dashpagu);
+        tx_dashreal = findViewById(R.id.tx_dashreal);
+        tx_dashsisa = findViewById(R.id.tx_dashsisa);
+        tx_datecalendar = findViewById(R.id.tx_datecalendar);
+        tx_namauser = findViewById(R.id.tx_namauser);
+        tx_dashbelum = findViewById(R.id.tx_dashpaketbelum);
+        tx_dashselesai = findViewById(R.id.tx_dashpaketselesai);
+        container_dashboards = findViewById(R.id.container_dashboards);
         container_dashboards.setVisibility(View.GONE);
 
 //        progress.show(this, "", "Please wait");

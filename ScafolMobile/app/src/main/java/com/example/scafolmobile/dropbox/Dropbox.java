@@ -22,7 +22,7 @@ import java.io.InputStream;
 public class Dropbox {
     private static final String ACCESS_TOKEN = "sl.AHvAGES5f6SyrQN0rann12OWfRklDgvwqZe5ipXiUaXQ-oDDZN-l0-efmvy5LkOy4Mpw9j882DK8oRID4a3_HfTGwPL1f-Ox8GXBM_lnsSuE8PKAIr-kDiUovPvkidzgKksn1C3Q";
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        public static void main(String args[]) throws DbxException, IOException {
+        public static void main(String[] args) throws DbxException, IOException {
             // Create Dropbox client
             DbxRequestConfig config = new DbxRequestConfig("", "en_US");
             DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);

@@ -42,13 +42,15 @@ public class Paket implements Serializable {
     private String paRencanKonrak;
     @SerializedName("pa_awal_kontrak")
     private String paAwalKontrak;
+    @SerializedName("pa_akhir_kontrak")
+    private String paAkhirKontrak;
     @SerializedName("status")
     private String status;
     @SerializedName("date_created")
     private String dateCreated;
     @SerializedName("date_updated")
     private String dateUpdated;
-    public Paket(String paId, String keId, String pekerjaId, String pptkId, String paJudul, String paJenis, String paVolume, String paSatuan, String paTahun, String paPagu, String paLokasi, String paLocLatitude, String paNomorKontrak, String paNilaiKontrak, String paRencanKonrak, String paAwalKontrak, String status, String dateCreated, String dateUpdated) {
+    public Paket(String paId, String keId, String pekerjaId, String pptkId, String paJudul, String paJenis, String paVolume, String paSatuan, String paTahun, String paPagu, String paLokasi, String paLocLatitude, String paNomorKontrak, String paNilaiKontrak, String paRencanKonrak, String paAwalKontrak, String paAkhirKontrak, String status, String dateCreated, String dateUpdated) {
         this.paId = paId;
         this.keId = keId;
         this.pekerjaId = pekerjaId;
@@ -66,6 +68,7 @@ public class Paket implements Serializable {
         this.paNilaiKontrak = paNilaiKontrak;
         this.paRencanKonrak = paRencanKonrak;
         this.paAwalKontrak = paAwalKontrak;
+        this.paAkhirKontrak = paAkhirKontrak;
         this.status = status;
         this.dateCreated = dateCreated;
         this.dateUpdated = dateUpdated;
@@ -98,6 +101,7 @@ public class Paket implements Serializable {
                 ", paNilaiKontrak='" + paNilaiKontrak + '\'' +
                 ", paRencanKonrak='" + paRencanKonrak + '\'' +
                 ", paAwalKontrak='" + paAwalKontrak + '\'' +
+                ", paAkhirKontrak='" + paAkhirKontrak + '\'' +
                 ", status='" + status + '\'' +
                 ", dateCreated='" + dateCreated + '\'' +
                 ", dateUpdated='" + dateUpdated + '\'' +
@@ -230,6 +234,14 @@ public class Paket implements Serializable {
 
     public void setPaAwalKontrak(String paAwalKontrak) {
         this.paAwalKontrak = paAwalKontrak;
+    }
+
+    public String getPaAkhirKontrak() {
+        return paAkhirKontrak;
+    }
+
+    public void setPaAkhirKontrak(String paAkhirKontrak) {
+        this.paAkhirKontrak = paAkhirKontrak;
     }
 
     public String getStatus() {

@@ -54,5 +54,9 @@ public interface ApiInterface {
 
     @GET("dashboardpptk/realpptk/")
     Call<DataResponsePA> countRealPPTK(@Query("pptk_id") String pptk_id);
+//
+//    @POST("paket/updatemap/")
+//    Call<DataResponsePA> updateMapPaket(@Field("pa_id") String pa_id, @Field("lat") String lat, @Field("long") String longitude);
+
 
 }

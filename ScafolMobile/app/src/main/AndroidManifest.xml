@@ -17,18 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityLogin"
             android:label="Login">
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityMapDetail"
             android:label="Project Location">
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityNotif"
             android:label="Notification">
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityUpdateData"
             android:label="Update Data">
         </activity>
@@ -47,6 +51,7 @@
             android:label="@string/title_proyek">
         </activity>
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityDetailPaket"
             android:label="@string/title_detail_paket">
             <intent-filter>

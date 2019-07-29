@@ -31,6 +31,7 @@
             android:textSize="14dp"
             android:padding="10dp"
             android:hint="Nama Lokasi"
+            android:editable="false"
             android:layout_marginBottom="5dp"
             />
 
@@ -42,6 +43,7 @@
             android:background="@drawable/edittext_generic"
             android:hint="Latitude"
             android:textSize="14dp"
+            android:editable="false"
             android:padding="10dp" />
 
         <EditText
@@ -51,6 +53,7 @@
             android:background="@drawable/edittext_generic"
             android:textSize="14dp"
             android:padding="10dp"
+            android:editable="false"
             android:hint="Longitude"
             android:layout_marginBottom="5dp"
             />

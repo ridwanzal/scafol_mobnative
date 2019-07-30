@@ -2,6 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -39,7 +40,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/prof_username"
+                        android:id="@+id/text_nomorkontrak"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -62,12 +63,12 @@
                         android:text="Nilai Kontrak"
                         android:textColor="#aaa" />
 
-                    <EditText
-                        android:id="@+id/prof_email"
+                    <com.aldoapps.autoformatedittext.AutoFormatEditText
+                        android:id="@+id/text_nilaikontrak"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView"
+                        app:isDecimal="true"
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textStyle="normal" />
@@ -87,7 +88,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/prof_telepon"
+                        android:id="@+id/text_awalkontrak"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -111,7 +112,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/prof_role"
+                        android:id="@+id/text_akhirkontrak"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

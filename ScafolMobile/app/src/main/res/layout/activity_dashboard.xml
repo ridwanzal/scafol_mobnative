@@ -502,7 +502,7 @@
         android:clickable="true"
         android:textStyle="bold"
         android:background="@drawable/button_ripple"
-        android:text="Lihat Semua Angaran" />
+        android:text="Lihat Semua Anggaran" />
 
 
 </LinearLayout>

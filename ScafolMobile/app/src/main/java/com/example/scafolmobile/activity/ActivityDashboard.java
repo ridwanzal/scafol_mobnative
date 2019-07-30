@@ -341,6 +341,21 @@ public class ActivityDashboard extends AppCompatActivity {
         sessionManager.checkLogin();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
     private static void retrieveTotalPaket(String user_id, final TextView tx_totalpaket){
         try{
             Call<DataResponsePA> callpaketall = apiInterface.countPaketPPTK(user_id);

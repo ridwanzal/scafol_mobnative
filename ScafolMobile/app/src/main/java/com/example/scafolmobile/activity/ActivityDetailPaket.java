@@ -235,6 +235,16 @@ public class ActivityDetailPaket extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intents = getIntent();
         String id_paket = intents.getStringExtra("pa_id");

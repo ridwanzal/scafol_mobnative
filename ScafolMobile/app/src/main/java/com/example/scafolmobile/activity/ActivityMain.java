@@ -180,6 +180,7 @@ public class ActivityMain extends AppCompatActivity{
                 // do nothing here
             }
         });
+
         total_paket_info = findViewById(R.id.total_paket_caption);
         total_paket_info.setText("Total Paket  : "   + paketAdapter.getItemCount());
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ActivityMain.this);

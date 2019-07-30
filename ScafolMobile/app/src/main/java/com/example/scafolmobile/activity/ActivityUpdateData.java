@@ -3,6 +3,7 @@ package com.example.scafolmobile.activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -14,6 +15,8 @@ import com.example.scafolmobile.tabcompupdate.SectionPagerAdapterUpdate;
 import com.google.android.material.tabs.TabLayout;
 
 public class ActivityUpdateData extends AppCompatActivity {
+    private TextView titlebardatas;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +33,7 @@ public class ActivityUpdateData extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabs.setupWithViewPager(viewPager);
+        titlebardatas = findViewById(R.id.titlebardatas);
+        titlebardatas.setText("Update Paket Detail");
     }
 }

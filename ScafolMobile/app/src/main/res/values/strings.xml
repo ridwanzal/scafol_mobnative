@@ -26,6 +26,8 @@
     <string name="progress">Progress</string>
     <string name="date_range">Date Range</string>
     <string name="submit">Submit</string>
+    <string name="aksi">Aksi</string>
+    <string name="delete">Hapus</string>
 
 
 </resources>

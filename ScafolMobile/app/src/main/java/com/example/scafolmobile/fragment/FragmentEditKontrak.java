@@ -99,7 +99,7 @@ public class FragmentEditKontrak extends Fragment {
 
                     @Override
                     public void onFailure(Call<DataResponsePaket> call, Throwable t) {
-                        Toast.makeText(ctx, "Berhasil Ubah Lokasi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ctx, "Berhasil Edit Kontrak", Toast.LENGTH_SHORT).show();
                         btn_simpan.setVisibility(View.GONE);
                     }
                 });

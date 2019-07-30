@@ -43,19 +43,37 @@
                     android:layout_marginTop="@dimen/activity_vertical_margin">
 
                     <ImageButton
+                        android:id="@+id/btn_date"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/baseline_date_range_black_24dp"
                         android:contentDescription="@string/date_range" />
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/date"
-                        android:textSize="16sp"
-                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
                         android:layout_marginStart="@dimen/activity_horizontal_margin"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin" >
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:textSize="16sp"
+                            android:layout_marginTop="8dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_detail_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:textSize="15sp"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -66,6 +84,7 @@
                     android:layout_marginTop="@dimen/activity_vertical_margin">
 
                     <EditText
+                        android:id="@+id/edt_progress"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal"
@@ -74,6 +93,7 @@
                         tools:ignore="LabelFor" />
 
                     <TextView
+                        android:id="@+id/tv_progress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/progress"
@@ -83,6 +103,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/btn_submit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
@@ -90,6 +111,73 @@
 
             </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_add">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kurva_s"
+                    android:textSize="16sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/progress"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/aksi"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_kurva"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_kurva_s"
+                    />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

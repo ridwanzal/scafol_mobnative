@@ -40,7 +40,7 @@
 
                     <EditText
                         android:id="@+id/text_nomorkontrak"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
@@ -64,7 +64,7 @@
 
                     <EditText
                         android:id="@+id/text_nilaikontrak"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
@@ -88,7 +88,7 @@
 
                     <EditText
                         android:id="@+id/text_awalkontrak"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
@@ -112,7 +112,7 @@
 
                     <EditText
                         android:id="@+id/text_akhirkontrak"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"

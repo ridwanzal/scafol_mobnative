@@ -1,12 +1,15 @@
 package com.example.scafolmobile.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +36,7 @@ public class FragmentEditKontrak extends Fragment {
     private TextView t_nilaikontrak;
     private TextView t_awalkontrak;
     private TextView t_akhirkontrak;
+    Button btn_simpan;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,12 +47,14 @@ public class FragmentEditKontrak extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_editkontrak, container, false);
+        final Context ctx = getActivity();
         t_nomorkontrak = view.findViewById(R.id.text_nomorkontrak);
         t_nilaikontrak = view.findViewById(R.id.text_nilaikontrak);
         t_awalkontrak = view.findViewById(R.id.text_awalkontrak);
         t_akhirkontrak = view.findViewById(R.id.text_akhirkontrak);
+        btn_simpan = view.findViewById(R.id.btn_simpan);
         Intent intent = getActivity().getIntent();
-        String id_paket = intent.getStringExtra("pa_id");
+        final String id_paket = intent.getStringExtra("pa_id");
         Call<DataResponsePaket> call_paket = apiInterface.getPaketId(id_paket);
         call_paket.enqueue(new Callback<DataResponsePaket>() {
             public void onResponse(Call<DataResponsePaket> call, Response<DataResponsePaket> response) {
@@ -71,6 +77,32 @@ public class FragmentEditKontrak extends Fragment {
             @Override
             public void onFailure(Call<DataResponsePaket> call, Throwable t) {
                 Log.e(TAG, t.toString());
+            }
+        });
+        btn_simpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // submit data to update contract.
+                String get_nomorkontrak = t_nomorkontrak.getText().toString();
+                String get_nilaikontrak = t_nilaikontrak.getText().toString();
+                String get_awalkontrak = t_awalkontrak.getText().toString();
+                String get_akhirkontrak = t_akhirkontrak.getText().toString();
+                String pa_id = id_paket;
+                Log.d(TAG, "No Kontrak : " + get_nomorkontrak + " Nilai Kontrak : " + get_nilaikontrak + " | " + id_paket);
+                Call<DataResponsePaket> call_update = apiInterface.updateKontrak(pa_id, get_nomorkontrak, get_nilaikontrak, get_awalkontrak, get_akhirkontrak);
+                call_update.enqueue(new Callback<DataResponsePaket>() {
+                    @Override
+                    public void onResponse(Call<DataResponsePaket> call, Response<DataResponsePaket> response) {
+                        Log.d(TAG, "Response Result Success------------------------> : " + response.body());
+                        Toast.makeText(ctx, "Fails", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<DataResponsePaket> call, Throwable t) {
+                        Toast.makeText(ctx, "Berhasil Ubah Lokasi", Toast.LENGTH_SHORT).show();
+                        btn_simpan.setVisibility(View.GONE);
+                    }
+                });
             }
         });
         Log.d(TAG, "GET ID PAKET " + id_paket);

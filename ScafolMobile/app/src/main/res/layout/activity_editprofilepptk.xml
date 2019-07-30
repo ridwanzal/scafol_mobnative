@@ -18,7 +18,7 @@
             android:layout_marginLeft="0dp"
             android:src="@drawable/employee" />
         <TextView
-            android:id="@+id/textdan"
+            android:id="@+id/prof_namas"
             android:layout_below="@id/imagelogo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_margin="7dp"
-            android:layout_below="@id/textdan"
+            android:layout_below="@id/prof_namas"
             android:id="@+id/card1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,12 +58,11 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_nomorkontrak"
+                        android:id="@+id/prof_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginTop="4dp"
-                        android:text="TextView"
+                        android:layout_weight="1"
                         android:textSize="16sp"
                         android:textStyle="normal" />
 
@@ -75,13 +74,12 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_nilaikontrak"
+                        android:id="@+id/prof_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="16sp"
                         android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
                         android:textStyle="normal" />
 
                     <TextView
@@ -92,30 +90,28 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_awalkontrak"
+                        android:id="@+id/prof_telepon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="16sp"
                         android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
                         android:textStyle="normal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bagian"
+                        android:text="Role"
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_akhirkontrak"
+                        android:id="@+id/prof_role"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="16sp"
                         android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
                         android:textStyle="normal" />
 
                     <Button

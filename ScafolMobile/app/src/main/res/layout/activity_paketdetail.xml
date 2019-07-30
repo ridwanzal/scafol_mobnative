@@ -141,7 +141,7 @@
                         android:textColor="#aaa" />
 
                     <TextView
-                        android:id="@+id/text_nilaikontrak"
+                        android:id="@+id/prof_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

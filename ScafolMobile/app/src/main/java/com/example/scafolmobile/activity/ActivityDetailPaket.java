@@ -1,11 +1,7 @@
 package com.example.scafolmobile.activity;
 
-import android.Manifest;
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.icu.text.NumberFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,43 +11,29 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import com.example.scafolmobile.R;
 import com.example.scafolmobile.model.DataResponsePaket;
-import com.example.scafolmobile.model.DataResponseUsers;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
 import com.example.scafolmobile.restapi.ApiInterface;
 import com.example.scafolmobile.sharedexternalmodule.formatMoneyIDR;
 import com.example.scafolmobile.sharedpreferences.SessionManager;
-import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
-import org.json.JSONArray;
-
-import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -119,7 +101,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
         text_tanggal_mulai = findViewById(R.id.text_date_created);
         text_tanggal_akhir = findViewById(R.id.text_date_end);
 
-        text_nilaikontrak = findViewById(R.id.text_nilaikontrak);
+        text_nilaikontrak = findViewById(R.id.prof_email);
         text_progress = findViewById(R.id.text_progress);
 
         cardView = findViewById(R.id.map_cards);

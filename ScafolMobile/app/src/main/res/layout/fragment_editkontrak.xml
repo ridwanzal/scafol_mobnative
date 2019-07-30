@@ -39,7 +39,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_nomorkontrak"
+                        android:id="@+id/prof_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -63,7 +63,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_nilaikontrak"
+                        android:id="@+id/prof_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -87,7 +87,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_awalkontrak"
+                        android:id="@+id/prof_telepon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -111,7 +111,7 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_akhirkontrak"
+                        android:id="@+id/prof_role"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

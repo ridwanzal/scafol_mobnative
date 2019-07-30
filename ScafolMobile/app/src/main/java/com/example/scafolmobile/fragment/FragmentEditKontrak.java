@@ -20,7 +20,6 @@ import com.example.scafolmobile.model.DataResponsePaket;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
 import com.example.scafolmobile.restapi.ApiInterface;
-import com.example.scafolmobile.sharedexternalmodule.formatMoneyIDR;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -48,10 +47,10 @@ public class FragmentEditKontrak extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_editkontrak, container, false);
         final Context ctx = getActivity();
-        t_nomorkontrak = view.findViewById(R.id.text_nomorkontrak);
-        t_nilaikontrak = view.findViewById(R.id.text_nilaikontrak);
-        t_awalkontrak = view.findViewById(R.id.text_awalkontrak);
-        t_akhirkontrak = view.findViewById(R.id.text_akhirkontrak);
+        t_nomorkontrak = view.findViewById(R.id.prof_username);
+        t_nilaikontrak = view.findViewById(R.id.prof_email);
+        t_awalkontrak = view.findViewById(R.id.prof_telepon);
+        t_akhirkontrak = view.findViewById(R.id.prof_role);
         btn_simpan = view.findViewById(R.id.btn_simpan);
         Intent intent = getActivity().getIntent();
         final String id_paket = intent.getStringExtra("pa_id");

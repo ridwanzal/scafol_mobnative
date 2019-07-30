@@ -2,24 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/ic_show_chart2_black_24dp"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:visible="true"
+        android:iconTint="@color/colorwhite"
+        android:title="Progress" />
+    <item
+        android:id="@+id/nav_kurvasrencana"
+        android:title="Kurva S Rencana" />
+    <item
         android:id="@+id/nav_upload"
         app:showAsAction="ifRoom|collapseActionView"
         android:icon="@drawable/ic_cloud_upload_white_24dp"
         android:visible="true"
         android:iconTint="@color/colorwhite"
+        android:iconTintMode="add"
         android:title="Search" />
-    <item
-        android:id="@+id/nav_kurvasrencana"
-        android:title="Kurva S Rencana" />
     <item
         android:id="@+id/nav_editkontrak"
         android:title="Edit Kontrak" />
     <item
         android:id="@+id/nav_editlokasi"
         android:title="Edit Lokasi" />
-    <item
-        android:id="@+id/nav_progress"
-        android:title="Progress" />
     <item
         android:id="@+id/nav_penyediajasa"
         android:title="Penyedia Jasa" />

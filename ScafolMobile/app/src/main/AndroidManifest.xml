@@ -22,7 +22,6 @@
             android:label="Login">
         </activity>
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityEditProfilPPTK"
             android:label="Profil">
         </activity>

@@ -20,6 +20,7 @@ import com.example.scafolmobile.model.DataResponsePaket;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
 import com.example.scafolmobile.restapi.ApiInterface;
+import com.example.scafolmobile.sharedexternalmodule.formatMoneyIDR;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -47,10 +48,10 @@ public class FragmentEditKontrak extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_editkontrak, container, false);
         final Context ctx = getActivity();
-        t_nomorkontrak = view.findViewById(R.id.prof_username);
-        t_nilaikontrak = view.findViewById(R.id.prof_email);
-        t_awalkontrak = view.findViewById(R.id.prof_telepon);
-        t_akhirkontrak = view.findViewById(R.id.prof_role);
+        t_nomorkontrak = view.findViewById(R.id.text_nomorkontrak);
+        t_nilaikontrak = view.findViewById(R.id.text_nilaikontrak);
+        t_awalkontrak = view.findViewById(R.id.text_awalkontrak);
+        t_akhirkontrak = view.findViewById(R.id.text_akhirkontrak);
         btn_simpan = view.findViewById(R.id.btn_simpan);
         Intent intent = getActivity().getIntent();
         final String id_paket = intent.getStringExtra("pa_id");
@@ -83,10 +84,11 @@ public class FragmentEditKontrak extends Fragment {
             public void onClick(View view) {
                 // submit data to update contract.
                 String get_nomorkontrak = t_nomorkontrak.getText().toString();
-                String get_nilaikontrak = t_nilaikontrak.getText().toString();
+                String get_nilai_kontrak = t_nilaikontrak.getText().toString();
                 String get_awalkontrak = t_awalkontrak.getText().toString();
                 String get_akhirkontrak = t_akhirkontrak.getText().toString();
                 String pa_id = id_paket;
+                String get_nilaikontrak = get_nilai_kontrak.replace(",", "");
                 Log.d(TAG, "No Kontrak : " + get_nomorkontrak + " Nilai Kontrak : " + get_nilaikontrak + " | " + id_paket);
                 Call<DataResponsePaket> call_update = apiInterface.updateKontrak(pa_id, get_nomorkontrak, get_nilaikontrak, get_awalkontrak, get_akhirkontrak);
                 call_update.enqueue(new Callback<DataResponsePaket>() {

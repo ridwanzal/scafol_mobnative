@@ -23,7 +23,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginBottom="10dp"
             android:textAlignment="viewStart"
-            app:srcCompat="@drawable/ic_scafol_logo" />
+            app:srcCompat="@drawable/ic_scafol_logo2" />
 
         <TextView
             android:id="@+id/textLand"

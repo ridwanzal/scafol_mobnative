@@ -1,12 +1,16 @@
 package com.example.scafolmobile.activity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,6 +52,7 @@ public class ActivityMain extends AppCompatActivity{
     private KegiatanAdapter kegiatanAdapter;
     private PaketAdapter paketAdapter;
     private TextView total_paket_info;
+    private ProgressBar progressBar;
 
     // Service
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -65,6 +70,7 @@ public class ActivityMain extends AppCompatActivity{
         String bi_id = "";
         String user_fullname = user.get(SessionManager.KEY_NAME);
         String user_name = user.get(SessionManager.KEY_USERNAME);
+//        progressBar =  (ProgressBar) findViewById(R.id.progress_bar_paketlist);
         switch (role){
             case "Admin" :
                 // user admin
@@ -95,6 +101,7 @@ public class ActivityMain extends AppCompatActivity{
                         ArrayList<Paket> data = response.body().getData();
                         Log.w(TAG, "paket data " + new Gson().toJson(data));
                         generatePaketList(response.body().getData());
+//                        progressBar.setVisibility(View.GONE);
                     }
 
                     @Override
@@ -135,6 +142,11 @@ public class ActivityMain extends AppCompatActivity{
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ActivityMain.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(kegiatanAdapter);
+    }
+
+    @Override
+    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
+        return super.onCreateView(parent, name, context, attrs);
     }
 
     private void generatePaketList(ArrayList<Paket> paketList){

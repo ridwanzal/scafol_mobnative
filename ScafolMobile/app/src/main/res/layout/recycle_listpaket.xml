@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.scafolmobile.activity.ActivityMain">
-
     <LinearLayout
         android:id="@+id/layout_total"
         android:layout_width="match_parent"
@@ -15,7 +14,7 @@
         android:paddingRight="10dp"
         android:background="#69B578"
         android:layout_height="wrap_content">
-            <TextView
+        <TextView
                 android:id="@+id/total_paket_caption"
                 android:layout_width="wrap_content"
                 android:textStyle="bold"
@@ -23,6 +22,12 @@
                 android:textColor="#fff"
                 android:layout_height="wrap_content" />
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar_paketlist"
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:visibility="gone"
+        android:layout_height="30dp" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_listpaket"
         android:clipToPadding="true"

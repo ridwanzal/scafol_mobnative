@@ -19,6 +19,11 @@
         android:visible="false"
         android:title="Search" />
     <item
+        android:id="@+id/nav_profile"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_person_outline_black_24dp"
+        android:title="Search" />
+    <item
         android:id="@+id/nav_notif"
         app:showAsAction="always"
         android:icon="@drawable/ic_notifications_none_black_24dp"

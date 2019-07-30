@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -85,6 +86,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
     private GoogleApiClient mGoogleApiClient;
     int PICK_IMAGE_REQUEST = 1;
 
+    private ProgressBar progressBar;
     private CardView cardView;
 
 
@@ -120,8 +122,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
         text_nilaikontrak = findViewById(R.id.text_nilaikontrak);
         text_progress = findViewById(R.id.text_progress);
 
-        cardView = findViewById(R.id.map_card);
-
+        cardView = findViewById(R.id.map_cards);
 
         Intent intent = getIntent();
         String id_paket = intent.getStringExtra("pa_id");
@@ -188,6 +189,7 @@ public class ActivityDetailPaket extends AppCompatActivity {
 //                            String tanggal_akhir = paketlist.get(i).getDateUpdated();
 //                            String nilai_kontrak = paketlist.get(i).getPaNilaiKontrak();
 //                        }
+                        Toast.makeText(ActivityDetailPaket.this, "Show map", Toast.LENGTH_SHORT).show();
                         Intent mapIntent = new Intent(ActivityDetailPaket.this, ActivityMapDetail.class);
                         Bundle args = new Bundle();
                         args.putSerializable("ARRAYLIST", paketlist);

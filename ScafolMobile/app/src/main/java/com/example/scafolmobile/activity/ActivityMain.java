@@ -53,6 +53,12 @@ public class ActivityMain extends AppCompatActivity{
     private PaketAdapter paketAdapter;
     private TextView total_paket_info;
     private ProgressBar progressBar;
+    private String user_id;
+    private String role;
+    private String bi_id;
+    private String user_fullname;
+    private String user_name;
+    private String dinas_id;
 
     // Service
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
@@ -64,12 +70,12 @@ public class ActivityMain extends AppCompatActivity{
         sessionManager = new SessionManager(getApplicationContext());
         sessionManager.checkLogin();
         HashMap<String, String> user = sessionManager.getUserDetails();
-        String role = user.get(SessionManager.KEY_ROLE);
-        String dinas_id =  user.get(SessionManager.KEY_DINASID);
-        String user_id =  user.get(SessionManager.KEY_USERID);
-        String bi_id = "";
-        String user_fullname = user.get(SessionManager.KEY_NAME);
-        String user_name = user.get(SessionManager.KEY_USERNAME);
+        role = user.get(SessionManager.KEY_ROLE);
+        dinas_id =  user.get(SessionManager.KEY_DINASID);
+        user_id =  user.get(SessionManager.KEY_USERID);
+        bi_id = "";
+        user_fullname = user.get(SessionManager.KEY_NAME);
+        user_name = user.get(SessionManager.KEY_USERNAME);
 //        progressBar =  (ProgressBar) findViewById(R.id.progress_bar_paketlist);
         switch (role){
             case "Admin" :
@@ -224,6 +230,11 @@ public class ActivityMain extends AppCompatActivity{
                     })
                     .show();
             case R.id.nav_search :
+                break;
+            case R.id.nav_profile :
+                Intent intent2 = new Intent(ActivityMain.this, ActivityEditProfilPPTK.class);
+                intent2.putExtra("user_id", user_id);
+                startActivity(intent2);
                 break;
             case R.id.nav_dashboard :
                 Intent intent = new Intent(ActivityMain.this, ActivityDashboard.class);

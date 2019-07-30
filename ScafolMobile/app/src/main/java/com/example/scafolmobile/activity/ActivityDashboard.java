@@ -66,6 +66,13 @@ public class ActivityDashboard extends AppCompatActivity {
     private String total_paket_belum;
     ProgressDialog progress;
 
+    String role;
+    String dinas_id;
+    String user_id;
+    String bi_id;
+    String user_fullname;
+    String user_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,11 +83,11 @@ public class ActivityDashboard extends AppCompatActivity {
         sessionManager = new SessionManager(getApplicationContext());
         sessionManager.checkLogin();
         HashMap<String, String> user = sessionManager.getUserDetails();
-        String role = user.get(SessionManager.KEY_ROLE);
-        String dinas_id =  user.get(SessionManager.KEY_DINASID);
-        String user_id =  user.get(SessionManager.KEY_USERID);
-        String bi_id = "";
-        String user_fullname = user.get(SessionManager.KEY_NAME);
+        role = user.get(SessionManager.KEY_ROLE);
+        dinas_id =  user.get(SessionManager.KEY_DINASID);
+        user_id =  user.get(SessionManager.KEY_USERID);
+        bi_id = "";
+        user_fullname = user.get(SessionManager.KEY_NAME);
         String user_name = user.get(SessionManager.KEY_USERNAME);
         show_list = findViewById(R.id.btn_tolist);
         show_list2 = findViewById(R.id.btn_tolist2);
@@ -314,6 +321,11 @@ public class ActivityDashboard extends AppCompatActivity {
                         })
                         .show();
             case R.id.nav_search :
+                break;
+            case R.id.nav_profile :
+                Intent intent2 = new Intent(ActivityDashboard.this, ActivityEditProfilPPTK.class);
+                intent2.putExtra("user_id", user_id);
+                startActivity(intent2);
                 break;
             case R.id.nav_notif :
                 Intent intent = new Intent(getApplicationContext(), ActivityNotif.class);

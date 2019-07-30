@@ -23,6 +23,11 @@
         </activity>
         <activity
             android:windowSoftInputMode="adjustResize"
+            android:name=".activity.ActivityEditProfilPPTK"
+            android:label="Profil">
+        </activity>
+        <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityMapDetail"
             android:label="Project Location">
         </activity>

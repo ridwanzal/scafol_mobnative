@@ -84,10 +84,11 @@ public class FragmentEditKontrak extends Fragment {
             public void onClick(View view) {
                 // submit data to update contract.
                 String get_nomorkontrak = t_nomorkontrak.getText().toString();
-                String get_nilaikontrak = t_nilaikontrak.getText().toString();
+                String get_nilai_kontrak = t_nilaikontrak.getText().toString();
                 String get_awalkontrak = t_awalkontrak.getText().toString();
                 String get_akhirkontrak = t_akhirkontrak.getText().toString();
                 String pa_id = id_paket;
+                String get_nilaikontrak = get_nilai_kontrak.replace(",", "");
                 Log.d(TAG, "No Kontrak : " + get_nomorkontrak + " Nilai Kontrak : " + get_nilaikontrak + " | " + id_paket);
                 Call<DataResponsePaket> call_update = apiInterface.updateKontrak(pa_id, get_nomorkontrak, get_nilaikontrak, get_awalkontrak, get_akhirkontrak);
                 call_update.enqueue(new Callback<DataResponsePaket>() {

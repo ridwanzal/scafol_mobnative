@@ -46,7 +46,7 @@ public class FragmentEditKontrak extends Fragment {
         t_nomorkontrak = view.findViewById(R.id.text_nomorkontrak);
         t_nilaikontrak = view.findViewById(R.id.text_nilaikontrak);
         t_awalkontrak = view.findViewById(R.id.text_awalkontrak);
-        t_akhirkontrak = view.findViewById(R.id.text_nomorkontrak);
+        t_akhirkontrak = view.findViewById(R.id.text_akhirkontrak);
         Intent intent = getActivity().getIntent();
         String id_paket = intent.getStringExtra("pa_id");
         Call<DataResponsePaket> call_paket = apiInterface.getPaketId(id_paket);

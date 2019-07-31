@@ -112,24 +112,57 @@
                         android:textColor="#000"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Tanggal (%)"
-                        android:textColor="#aaa" />
-
-                    <EditText
-                        android:id="@+id/prog_tanggal"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:background="@drawable/edittextborder_generic"
-                        android:text="-"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
+                        android:orientation="horizontal"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tanggal Progres"
+                                android:layout_marginTop="8dp"
+                                />
+
+                            <EditText
+                                android:id="@+id/text_akhirkontrak"
+                                android:layout_marginTop="7dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittextborder_generic"
+                                android:text="@string/date"
+                                android:padding="10dp"
+                                android:layout_marginRight="5dp"
+                                android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btn_date_akhir"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_date_ripple"
+                            android:tint="@color/colorwhite"
+                            android:padding="10dp"
+                            android:layout_gravity="bottom"
+                            android:src="@drawable/baseline_date_range_black_24dp"
+                            android:contentDescription="@string/date_range" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/button_ripple"
+                        android:text="Tambah Progres Fisik"/>
                 </LinearLayout>
 
             </RelativeLayout>
@@ -292,25 +325,49 @@
                         android:textColor="#000"
                         />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Tanggal Progress"
-                        android:textColor="#aaa" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
 
-                    <EditText
-                        android:id="@+id/prog_prog"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:padding="10dp"
-                        android:background="@drawable/edittextborder_generic"
-                        android:text="-"
-                        android:textSize="16sp"
-                        android:layout_marginTop="4dp"
-                        android:textColor="#000"
-                        />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tanggal Progres"
+                                android:layout_marginTop="8dp"
+                                />
+
+                            <EditText
+                                android:id="@+id/text_akhirkontrak"
+                                android:layout_marginTop="7dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittextborder_generic"
+                                android:text="@string/date"
+                                android:padding="10dp"
+                                android:layout_marginRight="5dp"
+                                android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/btn_date_akhir"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_date_ripple"
+                            android:tint="@color/colorwhite"
+                            android:padding="10dp"
+                            android:layout_gravity="bottom"
+                            android:src="@drawable/baseline_date_range_black_24dp"
+                            android:contentDescription="@string/date_range" />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -333,6 +390,14 @@
                         android:layout_marginTop="4dp"
                         android:textColor="#000"
                         />
+
+                    <Button
+                        android:id="@+id/btns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:background="@drawable/button_ripple"
+                        android:text="Tambah Progres Keuangan"/>
                 </LinearLayout>
 
             </RelativeLayout>

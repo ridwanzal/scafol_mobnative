@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:padding="5dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -18,40 +19,28 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_gravity="left"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:orientation="vertical"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
-                    android:layout_height="wrap_content">
+                    android:orientation="vertical"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
                     <TextView
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_width="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_gravity="left"
-                        android:text="Total Paket"
-                        android:textColor="#aaa"
-                        />
-
-                    <TextView
-                        android:id="@+id/tx_dashtotalpaket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="32"
-                        android:textColor="#444"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                        android:text="Upload Image"
+                        android:textColor="#aaa" />
                 </LinearLayout>
 
 
@@ -61,14 +50,14 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical" >
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_gravity="left"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="7dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
@@ -76,11 +65,11 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
                     android:orientation="vertical"
                     android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_height="wrap_content">
+                    android:paddingBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -88,25 +77,13 @@
                         android:layout_gravity="left"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="Total Paket Ongoing"
+                        android:text="Upload File"
                         android:textColor="#aaa" />
-
-                    <TextView
-                        android:id="@+id/tx_dsahongoing"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="20dp"
-                        android:layout_weight="1"
-                        android:text="3"
-                        android:textColor="#444"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
                 </LinearLayout>
+
 
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
-
     </LinearLayout>
 </LinearLayout>

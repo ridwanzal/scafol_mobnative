@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.example.scafolmobile.R;
@@ -163,6 +164,7 @@ public class FragmentEditKontrak extends Fragment implements View.OnClickListene
                 DatePickerFragment datePickerFragment = new DatePickerFragment();
                 datePickerFragment.setTargetFragment(FragmentEditKontrak.this, 0);
                 isDateEdit1 = 1;
+                datePickerFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.DialogTheme);
                 datePickerFragment.show(getActivity().getSupportFragmentManager(), "DatePickerEDitKontrak");
                 break;
             case R.id.btn_date_akhir:

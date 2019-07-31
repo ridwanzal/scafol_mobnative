@@ -4,6 +4,7 @@ import com.example.scafolmobile.model.DataResponse;
 import com.example.scafolmobile.model.DataResponsePA;
 import com.example.scafolmobile.model.DataResponseKegiatan;
 import com.example.scafolmobile.model.DataResponsePaket;
+import com.example.scafolmobile.model.DataResponseProgress;
 import com.example.scafolmobile.model.DataResponseUsers;
 
 import retrofit2.Call;
@@ -36,6 +37,9 @@ public interface ApiInterface {
     @GET("paket/")
     Call<DataResponsePaket> getPaketId(@Query("pa_id") String pa_id);
 
+    @GET("progress/fisik")
+    Call<DataResponseProgress> getProgressByPaket(@Query("pa_id") String pa_id);
+
     @GET("kegiatan/bidang/")
     Call<DataResponseKegiatan> getKegiatanBidang(@Query("bi_id") String bi_id);
 
@@ -67,6 +71,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("paket/updatekontrak/")
     Call<DataResponsePaket> updateKontrak(@Field("pa_id") String pa_id,  @Field("pa_nomor_kontrak") String pa_nomor_kontrak, @Field("pa_nilai_kontrak") String pa_nilai_kontrak, @Field("pa_awal_kontrak") String pa_awal_kontak, @Field("pa_akhir_kontrak") String pa_akhir_kontrak);
+
 
 //    @POST("paket/updatemap/")
 //    Call<DataResponsePA> updateMapPaket(@Field("pa_id") String pa_id, @Field("lat") String lat, @Field("long") String longitude);

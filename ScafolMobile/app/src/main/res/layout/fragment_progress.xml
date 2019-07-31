@@ -133,7 +133,7 @@
                                 />
 
                             <EditText
-                                android:id="@+id/text_akhirkontrak"
+                                android:id="@+id/tx_tanggalprogress"
                                 android:layout_marginTop="7dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
                         </LinearLayout>
 
                         <ImageView
-                            android:id="@+id/btn_date_akhir"
+                            android:id="@+id/date_progresfisik"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:background="@drawable/button_date_ripple"
@@ -154,7 +154,7 @@
                             android:padding="10dp"
                             android:layout_gravity="bottom"
                             android:src="@drawable/baseline_date_range_black_24dp"
-                            android:contentDescription="@string/date_range" />
+                            />
                     </LinearLayout>
 
                     <Button
@@ -176,7 +176,6 @@
             android:id="@+id/relx1"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:id="@+id/labelis"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

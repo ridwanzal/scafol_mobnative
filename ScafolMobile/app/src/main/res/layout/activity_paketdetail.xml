@@ -43,7 +43,7 @@
 
                     <TextView
                         android:id="@+id/text_judul"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
@@ -60,7 +60,7 @@
                         android:background="#eee" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Jenis"
@@ -93,7 +93,7 @@
 
                     <TextView
                         android:id="@+id/text_tahun"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
@@ -117,7 +117,7 @@
 
                     <TextView
                         android:id="@+id/text_pagu"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
@@ -142,7 +142,7 @@
 
                     <TextView
                         android:id="@+id/prof_email"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
@@ -167,7 +167,7 @@
 
                     <TextView
                         android:id="@+id/text_progress"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="16sp"
@@ -219,7 +219,7 @@
 
                     <TextView
                         android:id="@+id/text_satuan"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -244,7 +244,7 @@
 
                     <TextView
                         android:id="@+id/text_volume"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -269,7 +269,7 @@
 
                     <TextView
                         android:id="@+id/text_status"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -293,7 +293,7 @@
 
                     <TextView
                         android:id="@+id/text_date_created"
-                        android:layout_width="104dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -317,7 +317,7 @@
 
                     <TextView
                         android:id="@+id/text_date_end"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -389,7 +389,7 @@
 
                     <TextView
                         android:id="@+id/text_emailpptk"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -414,7 +414,7 @@
 
                     <TextView
                         android:id="@+id/text_telpptk"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
@@ -438,7 +438,7 @@
 
                     <TextView
                         android:id="@+id/text_bidangpptk"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"

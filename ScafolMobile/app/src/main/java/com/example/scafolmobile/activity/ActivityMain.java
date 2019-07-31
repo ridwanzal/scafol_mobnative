@@ -60,6 +60,8 @@ public class ActivityMain extends AppCompatActivity{
     private String user_name;
     private String dinas_id;
 
+    private ProgressBar progress_listpaket;
+
     // Service
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
     SessionManager sessionManager;
@@ -99,6 +101,7 @@ public class ActivityMain extends AppCompatActivity{
             case "Pptk" :
                 // user pptk
                 setContentView(R.layout.recycle_listpaket);
+                progress_listpaket = findViewById(R.id.progress_listpaket);
                 Snackbar.make(findViewById(R.id.activity_paketlist), "Selamat Datang", Snackbar.LENGTH_LONG);
                 Call<DataResponsePaket> call_paket = apiInterface.getPaketPptk(user_id);
                 call_paket.enqueue(new Callback<DataResponsePaket>() {
@@ -107,7 +110,9 @@ public class ActivityMain extends AppCompatActivity{
                         ArrayList<Paket> data = response.body().getData();
                         Log.w(TAG, "paket data " + new Gson().toJson(data));
                         generatePaketList(response.body().getData());
-//                        progressBar.setVisibility(View.GONE);
+                        progress_listpaket.setVisibility(View.GONE);
+                        recyclerView = findViewById(R.id.recycle_listpaket);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                     @Override
@@ -123,7 +128,7 @@ public class ActivityMain extends AppCompatActivity{
                     sessionManager.checkLogin();
                 }
                 Call<DataResponseKegiatan> call_kegiatan_bidang = apiInterface.getKegiatanBidang(bi_id);
-                    call_kegiatan_bidang.enqueue(new Callback<DataResponseKegiatan>() {
+                call_kegiatan_bidang.enqueue(new Callback<DataResponseKegiatan>() {
                         @Override
                         public void onResponse(Call<DataResponseKegiatan> call, Response<DataResponseKegiatan> response) {
                             ArrayList<Kegiatan> data = response.body().getData();
@@ -186,6 +191,7 @@ public class ActivityMain extends AppCompatActivity{
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ActivityMain.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(paketAdapter);
+        recyclerView.setVisibility(View.GONE);
     }
 
     @Override

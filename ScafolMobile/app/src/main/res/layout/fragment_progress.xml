@@ -20,6 +20,7 @@
                 android:textColor="#aaa" />
 
             <TextView
+                android:id="@+id/pr_fisik_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -68,7 +69,7 @@
                         android:layout_weight="1"
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
-                        android:text="-"
+                        android:text=""
                         android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="" />
@@ -86,7 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
-                        android:text="-"
+                        android:text=""
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
@@ -106,7 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
-                        android:text="-"
+                        android:text=""
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
@@ -128,7 +129,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Tanggal Progres"
-                                android:layout_marginTop="8dp"
+                                android:layout_marginTop="5dp"
                                 />
 
                             <EditText
@@ -137,7 +138,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/edittextborder_generic"
-                                android:text="@string/date"
+                                android:text=""
                                 android:padding="10dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="15sp"/>
@@ -189,13 +190,13 @@
                     android:textColor="#aaa" />
 
                 <TextView
+                    android:id="@+id/pr_keuangan_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Lihat Daftar Progres"
                     android:padding="5dp"
                     android:textAlignment="textEnd"
-                    android:id="@+id/tx_detailprogf"
                     android:textColor="#4a9ed6" />
 
             </LinearLayout>
@@ -237,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
-                        android:text="-"
+                        android:text=""
                         android:textSize="16sp"
                         android:textColor="#000"
                         android:padding="10dp"
@@ -257,7 +258,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
-                        android:text="-"
+                        android:text=""
                         android:textSize="16sp"
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
@@ -278,7 +279,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
-                        android:text="-"
+                        android:text=""
                         android:textSize="16sp"
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
@@ -297,7 +298,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="-"
+                        android:text=""
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
                         android:textSize="16sp"
@@ -319,7 +320,7 @@
                         android:layout_weight="1"
                         android:padding="10dp"
                         android:background="@drawable/edittextborder_generic"
-                        android:text="-"
+                        android:text=""
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textColor="#000"
@@ -342,15 +343,16 @@
                                 android:layout_height="wrap_content"
                                 android:text="Tanggal Progres"
                                 android:layout_marginTop="8dp"
+                                android:textColor="#aaa"
                                 />
 
                             <EditText
                                 android:id="@+id/text_akhirkontrak"
-                                android:layout_marginTop="7dp"
+                                android:layout_marginTop="5dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/edittextborder_generic"
-                                android:text="@string/date"
+                                android:text=""
                                 android:padding="10dp"
                                 android:layout_marginRight="5dp"
                                 android:textSize="15sp"/>
@@ -383,9 +385,7 @@
                         android:background="@drawable/edittextborder_generic"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="-"
-
-
+                        android:text=""
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textColor="#000"

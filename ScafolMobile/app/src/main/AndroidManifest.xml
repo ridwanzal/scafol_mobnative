@@ -18,6 +18,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:windowSoftInputMode="adjustResize"
+            android:name=".activity.ActivityProgressFisik"
+            android:label="Progres Fisik">
+        </activity>
+        <activity
+            android:windowSoftInputMode="adjustResize"
+            android:name=".activity.ActivityProgressKeuangan"
+            android:label="Progres Keuangan">
+        </activity>
+        <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityLogin"
             android:label="Login">
         </activity>
@@ -58,9 +68,6 @@
             android:windowSoftInputMode="adjustResize"
             android:name=".activity.ActivityDetailPaket"
             android:label="@string/title_detail_paket">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

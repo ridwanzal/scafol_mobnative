@@ -11,7 +11,6 @@
 
         <org.osmdroid.views.MapView android:id="@+id/map2"
             android:layout_width="match_parent"
-            tilesource="Mapnik"
             android:layout_alignParentTop="true"
             android:layout_height="match_parent" />
         <ProgressBar

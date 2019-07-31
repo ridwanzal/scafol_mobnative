@@ -27,7 +27,7 @@ public class ActivityUpdateData extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionPagerAdapterUpdate);
         Integer get_fromdetail = getIntent().getIntExtra("position", 0);
-        Toast.makeText(this, "get from detail " + get_fromdetail, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "get from detail " + get_fromdetail, Toast.LENGTH_SHORT).show();
         viewPager.setCurrentItem(get_fromdetail);
 
         TabLayout tabs = findViewById(R.id.tabs);
@@ -35,5 +35,20 @@ public class ActivityUpdateData extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         titlebardatas = findViewById(R.id.titlebardatas);
         titlebardatas.setText("Update Detail Paket");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

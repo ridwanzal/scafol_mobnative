@@ -23,11 +23,11 @@
                 android:layout_height="wrap_content" />
     </LinearLayout>
     <ProgressBar
-        android:id="@+id/progress_bar_paketlist"
         android:layout_width="match_parent"
-        android:layout_marginTop="35dp"
-        android:visibility="gone"
-        android:layout_height="30dp" />
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_listpaket"
+        android:visibility="visible"
+        />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_listpaket"
         android:clipToPadding="true"

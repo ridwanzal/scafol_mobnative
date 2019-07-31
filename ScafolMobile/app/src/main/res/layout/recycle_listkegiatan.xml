@@ -7,8 +7,8 @@
     android:padding="5dp"
     tools:context="com.example.scafolmobile.activity.ActivityMain">
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/progress_listpaket"
         android:id="@+id/recycle_listkegiatan"
         android:layout_width="match_parent"
         android:clickable="true"

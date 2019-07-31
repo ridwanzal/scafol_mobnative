@@ -7,7 +7,7 @@
         app:showAsAction="ifRoom|collapseActionView"
         android:visible="true"
         android:iconTint="@color/colorwhite"
-        android:title="Progress" />
+        android:title="Progres" />
     <item
         android:id="@+id/nav_kurvasrencana"
         android:title="Kurva S Rencana" />

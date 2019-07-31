@@ -1,5 +1,6 @@
 package com.example.scafolmobile.fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,23 +23,31 @@ import com.example.scafolmobile.model.DataResponsePaket;
 import com.example.scafolmobile.model.Paket;
 import com.example.scafolmobile.restapi.ApiClient;
 import com.example.scafolmobile.restapi.ApiInterface;
-import com.example.scafolmobile.sharedexternalmodule.formatMoneyIDR;
+import com.example.scafolmobile.sharedexternalmodule.DatePickerFragment;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentEditKontrak extends Fragment {
+public class FragmentEditKontrak extends Fragment implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
     ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
     private static String TAG = "FragmentEditKontrak";
     private TextView t_nomorkontrak;
     private TextView t_nilaikontrak;
     private TextView t_awalkontrak;
     private TextView t_akhirkontrak;
+
+    private ImageView btn_date_awal;
+    private ImageView btn_date_akhir;
     Button btn_simpan;
+
+    public static int isDateEdit1;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +63,13 @@ public class FragmentEditKontrak extends Fragment {
         t_nilaikontrak = view.findViewById(R.id.text_nilaikontrak);
         t_awalkontrak = view.findViewById(R.id.text_awalkontrak);
         t_akhirkontrak = view.findViewById(R.id.text_akhirkontrak);
+
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+
+        btn_date_awal = view.findViewById(R.id.btn_date_awal);
+        btn_date_akhir = view.findViewById(R.id.btn_date_akhir);
+
         btn_simpan = view.findViewById(R.id.btn_simpan);
         Intent intent = getActivity().getIntent();
         final String id_paket = intent.getStringExtra("pa_id");
@@ -107,16 +125,52 @@ public class FragmentEditKontrak extends Fragment {
             }
         });
         Log.d(TAG, "GET ID PAKET " + id_paket);
+
+        btn_date_awal.setOnClickListener(this);
+        btn_date_akhir.setOnClickListener(this);
+
         return view;
     }
-
-
 
     public static String checkData(String data){
         if(data == null || data == "" || data.equals("")){
             return "-";
         }else{
             return data;
+        }
+    }
+
+    @Override
+    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+        Log.e(TAG, "Date Result edit paket "  + String.valueOf(datePicker.getId()));
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(i, i1, i2);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        if(isDateEdit1 == 1){
+            Log.e(TAG, "EDIT 1");
+            t_awalkontrak.setText(dateFormat.format(calendar.getTime()));
+        }else if(isDateEdit1 == 2){
+            Log.e(TAG, "EDIT 2");
+            t_akhirkontrak.setText(dateFormat.format(calendar.getTime()));
+
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_date_awal:
+                DatePickerFragment datePickerFragment = new DatePickerFragment();
+                datePickerFragment.setTargetFragment(FragmentEditKontrak.this, 0);
+                isDateEdit1 = 1;
+                datePickerFragment.show(getActivity().getSupportFragmentManager(), "DatePickerEDitKontrak");
+                break;
+            case R.id.btn_date_akhir:
+                DatePickerFragment datePickerFragment2 = new DatePickerFragment();
+                datePickerFragment2.setTargetFragment(FragmentEditKontrak.this, 0);
+                isDateEdit1 = 2;
+                datePickerFragment2.show(getActivity().getSupportFragmentManager(), "DatePickerEDitKontrak");
+                break;
         }
     }
 }

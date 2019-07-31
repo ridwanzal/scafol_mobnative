@@ -13,13 +13,12 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card_add"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:paddingTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,6 +31,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:text="@string/kurva_s"
                     android:textSize="16sp"/>
@@ -40,39 +40,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/activity_vertical_margin">
+                    >
 
-                    <ImageButton
-                        android:id="@+id/btn_date"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/baseline_date_range_black_24dp"
-                        android:contentDescription="@string/date_range" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="@dimen/activity_horizontal_margin"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin" >
+                        android:layout_weight="2"
+                        android:orientation="vertical" >
 
                         <TextView
                             android:id="@+id/tv_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/date"
-                            android:textSize="16sp"
                             android:layout_marginTop="8dp"
                             />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/tv_detail_date"
-                            android:layout_width="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/edittextborder_generic"
                             android:text="@string/date"
+                            android:padding="10dp"
+                            android:layout_marginRight="5dp"
                             android:textSize="15sp"/>
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btn_date"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorMain"
+                        android:padding="7dp"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/baseline_date_range_black_24dp"
+                        android:contentDescription="@string/date_range" />
 
 
                 </LinearLayout>
@@ -80,26 +86,28 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_marginTop="@dimen/activity_vertical_margin">
-
-                    <EditText
-                        android:id="@+id/edt_progress"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:autofillHints="@string/progress"
-                        tools:targetApi="o"
-                        tools:ignore="LabelFor" />
 
                     <TextView
                         android:id="@+id/tv_progress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/progress"
-                        android:textSize="16sp"
-                        android:layout_marginStart="@dimen/activity_horizontal_margin"
-                        android:layout_marginLeft="@dimen/activity_horizontal_margin" />
+                        />
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/edt_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:autofillHints="@string/progress"
+                        android:padding="7dp"
+                        android:background="@drawable/edittextborder_generic"
+                        tools:targetApi="o"
+                        tools:ignore="LabelFor" />
+
                 </LinearLayout>
 
                 <Button
@@ -107,6 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/button_ripple"
                     android:text="@string/submit"/>
 
             </LinearLayout>

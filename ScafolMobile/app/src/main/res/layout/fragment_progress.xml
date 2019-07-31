@@ -6,19 +6,34 @@
         android:layout_width="match_parent"
         android:padding="5dp"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Progres Fisik"
-            android:padding="5dp"
-            android:id="@+id/texsa"
-            android:textColor="#aaa" />
+        <LinearLayout
+            android:id="@+id/labelis"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Progres Fisik"
+                android:padding="5dp"
+                android:textColor="#aaa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lihat Daftar Progres"
+                android:padding="5dp"
+                android:textAlignment="textEnd"
+                android:textColor="#4a9ed6" />
+
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_margin="7dp"
             android:id="@+id/card1x"
-            android:layout_below="@id/texsa"
+            android:layout_below="@id/labelis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -27,7 +42,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
@@ -47,22 +61,17 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_judulx"
+                        android:id="@+id/prog_target"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:text="-"
                         android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -72,22 +81,17 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_jenisx"
+                        android:id="@+id/prog_real"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
                         android:text="-"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
                         android:textSize="16sp"
                         android:textStyle="" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -97,21 +101,16 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_tahunx"
+                        android:id="@+id/prog_deviasi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
                         android:text="-"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
                         android:textSize="16sp" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -121,11 +120,13 @@
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_pagu"
+                        android:id="@+id/prog_tanggal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:text="-"
                         android:textColor="#000"
                         android:textSize="16sp" />
@@ -135,17 +136,36 @@
 
         </androidx.cardview.widget.CardView>
         <RelativeLayout
+            android:layout_marginTop="30dp"
             android:layout_below="@id/card1x"
             android:layout_width="wrap_content"
             android:id="@+id/relx1"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="5dp"
-                android:text="Progres Keuangan"
-                android:textColor="#aaa" />
+            <LinearLayout
+                android:id="@+id/labelis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Progres Keuangan"
+                    android:padding="5dp"
+                    android:id="@+id/tx_progressfisik"
+                    android:textColor="#aaa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Lihat Daftar Progres"
+                    android:padding="5dp"
+                    android:textAlignment="textEnd"
+                    android:id="@+id/tx_detailprogf"
+                    android:textColor="#4a9ed6" />
+
+            </LinearLayout>
 
         </RelativeLayout>
         <androidx.cardview.widget.CardView
@@ -160,7 +180,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
@@ -176,11 +195,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Nama Perusahaan"
+                        android:text="Daya Serap Kontrak"
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_judul"
+                        android:id="@+id/prog_dayaserap"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -188,77 +207,128 @@
                         android:text="-"
                         android:textSize="16sp"
                         android:textColor="#000"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textStyle="" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Nama Pimpinan"
+                        android:text="Pagu"
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_jenis"
+                        android:id="@+id/prog_pagu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
                         android:text="-"
                         android:textSize="16sp"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
                         android:textStyle="" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Jenis Perusahaan"
+                        android:text="Nilai Kontrak"
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_tahun"
+                        android:id="@+id/prog_kontrak"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
                         android:text="-"
                         android:textSize="16sp"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textColor="#000"
                         />
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Alamat"
+                        android:text="Sisa Kontrak"
                         android:textColor="#aaa" />
 
                     <EditText
-                        android:id="@+id/text_pagux"
+                        android:id="@+id/prog_sisa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="-"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
+                        android:textSize="16sp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#000"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sisa Anggaran"
+                        android:textColor="#aaa" />
+
+                    <EditText
+                        android:id="@+id/prog_sisang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
+                        android:text="-"
+                        android:textSize="16sp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#000"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tanggal Progress"
+                        android:textColor="#aaa" />
+
+                    <EditText
+                        android:id="@+id/prog_prog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
+                        android:text="-"
+                        android:textSize="16sp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#000"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Keterangan"
+                        android:textColor="#aaa" />
+
+                    <EditText
+                        android:id="@+id/prog_keterangans"
+                        android:layout_width="match_parent"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-"
+
+
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textColor="#000"

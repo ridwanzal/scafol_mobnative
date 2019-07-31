@@ -46,17 +46,13 @@
                         android:layout_weight="1"
                         android:layout_marginTop="4dp"
                         android:text="TextView"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textSize="16sp"
                         android:textStyle="normal" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
-
                     <TextView
+                        android:layout_marginTop="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -69,21 +65,19 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:isDecimal="true"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textSize="16sp"
+                        android:text="TextView"
                         android:layout_marginTop="4dp"
                         android:textStyle="normal" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_marginTop="5dp"
                         android:text="Awal Kontrak"
                         android:textColor="#aaa" />
 
@@ -93,22 +87,18 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textStyle="normal" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#eee" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Akhir Kontrak"
+                        android:layout_marginTop="5dp"
                         android:textColor="#aaa" />
 
                     <EditText
@@ -117,6 +107,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="TextView"
+                        android:padding="10dp"
+                        android:background="@drawable/edittextborder_generic"
                         android:textSize="16sp"
                         android:layout_marginTop="4dp"
                         android:textStyle="normal" />

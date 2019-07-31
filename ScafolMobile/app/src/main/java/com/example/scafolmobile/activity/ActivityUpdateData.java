@@ -34,6 +34,6 @@ public class ActivityUpdateData extends AppCompatActivity {
         tabs.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabs.setupWithViewPager(viewPager);
         titlebardatas = findViewById(R.id.titlebardatas);
-        titlebardatas.setText("Update Paket Detail");
+        titlebardatas.setText("Update Detail Paket");
     }
 }

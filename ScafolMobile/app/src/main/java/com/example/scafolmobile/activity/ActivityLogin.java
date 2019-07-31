@@ -139,4 +139,18 @@ public class ActivityLogin extends AppCompatActivity{
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+    }
 }

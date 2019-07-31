@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,7 +28,7 @@ public class FragmentKurvaS extends Fragment implements View.OnClickListener, Da
     private TextView tvDate;
     private TextView tvDetailDate;
     private TextView tvProgress;
-    private ImageButton btnDate;
+    private ImageView btnDate;
     private EditText edtProgress;
     private Button btnSubmit;
 
